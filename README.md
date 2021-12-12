@@ -1,1 +1,2 @@
 # MyConfigWM
+bspwm,polybar,sxkhd
