@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale "$HOME/Pictures/anime-girl-white-dress-beautiful.jpg"
+feh --no-fehbg --bg-scale "$HOME/.config/bspwm/bg.jpg"
