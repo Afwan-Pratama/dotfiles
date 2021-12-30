@@ -1,0 +1,98 @@
+[module/spacing]
+type = custom/text
+content = " "
+content-background = ${color.background}
+
+[module/spacecolor1]
+type = custom/text
+content = " "
+content-background = ${color.color1}
+
+[module/spacecolor2]
+type = custom/text
+content = " "
+content-background = ${color.color2}
+
+[module/spacecolor7]
+type = custom/text
+content = " "
+content-background = ${color.color7}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/1to2]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${color.color2}
+content-foreground = ${color.color1}
+
+[module/2to3]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.color3}
+content-foreground = ${color.color2}
+
+[module/3to4]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.color4}
+content-foreground = ${color.color3}
+
+[module/4to5]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.color5}
+content-foreground = ${color.color4}
+
+[module/5to6]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.color6}
+content-foreground = ${color.color5}
+
+[module/6to7]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.color7}
+content-foreground = ${color.color6}
+
+[module/7to8]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.color8}
+content-foreground = ${color.color7}
+
+[module/BRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.blue}
+content-foreground = ${color.background}
+
+[module/end]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.color7}
+
+[module/RPL]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.magenta}
+content-foreground = ${color.red}
+
+[module/MPL]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.blue}
+content-foreground = ${color.magenta}
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
