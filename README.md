@@ -16,4 +16,8 @@ My Config Window Manager for my Daily Use
 
 -dunst (Notification Daemon)
 
+##Terminal Emulator
 
+-Kitty (My Main Terminal Emulator)
+
+-Alacritty (Optional)
