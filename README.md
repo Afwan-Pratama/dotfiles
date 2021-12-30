@@ -2,7 +2,7 @@
 
 My Config Window Manager for my Daily Use
 
-##Bspwm
+## Bspwm
 
 -Bspwmrc (Bspwm config)
 
@@ -16,7 +16,7 @@ My Config Window Manager for my Daily Use
 
 -dunst (Notification Daemon)
 
-##Terminal Emulator
+## Terminal Emulator
 
 -Kitty (My Main Terminal Emulator)
 
