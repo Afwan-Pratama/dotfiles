@@ -16,6 +16,8 @@ My Config Window Manager for my Daily Use
 
 -dunst (Notification Daemon)
 
+-Picom (Compositor)
+
 ## Terminal Emulator
 
 -Kitty (My Main Terminal Emulator)
