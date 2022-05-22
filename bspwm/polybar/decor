@@ -1,24 +1,32 @@
 [module/spacing]
 type = custom/text
 content = " "
-content-background = ${color.background}
+content-background = ${color.color1}
+
+[module/spacecenter]
+type = custom/text
+content = " "
+content-background = ${color.center}
+content-underline = ${color.fontcenter}
 
 [module/spacecolor1]
 type = custom/text
 content = " "
 content-background = ${color.color1}
+content-underline = ${color.font1}
 
-[module/spacecolor2]
+[module/spacecolor6]
 type = custom/text
 content = " "
-content-background = ${color.color2}
-
-[module/spacecolor7]
-type = custom/text
-content = " "
-content-background = ${color.color7}
-
+content-background = ${color.color6}
+content-underline = ${color.font6}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/start]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${color.background}
+content-foreground = ${color.color1}
 
 [module/1to2]
 type = custom/text
@@ -77,22 +85,22 @@ content-foreground = ${color.background}
 
 [module/end]
 type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.color6}
+
+[module/center-right]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.center}
+content-foreground = ${color.background}
+
+[module/center-left]
+type = custom/text
 content = "%{T3}%{T-}"
 content-font = 3
 content-background = ${color.background}
-content-foreground = ${color.color7}
-
-[module/RPL]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.magenta}
-content-foreground = ${color.red}
-
-[module/MPL]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.blue}
-content-foreground = ${color.magenta}
+content-foreground = ${color.center}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

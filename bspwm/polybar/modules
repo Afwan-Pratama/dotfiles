@@ -14,17 +14,21 @@ format-volume = <ramp-volume><label-volume>
 format-muted = <label-muted>
 format-muted-prefix = "  "
 format-muted-prefix-font = 2
-format-muted-prefix-foreground = ${color.font}
-format-muted-prefix-background = ${color.color6}
+format-muted-prefix-foreground = ${color.font5}
+format-muted-prefix-background = ${color.color5}
+format-muted-prefix-underline = ${color.font5}
 
 label-volume = "%percentage%% "
 label-muted = "Mute"
 
-label-volume-background = ${color.color6}
-label-muted-background = ${color.color6}
+label-volume-background = ${color.color5}
+label-muted-background = ${color.color5}
 
-label-volume-foreground = ${color.font}
-label-muted-foreground = ${color.font}
+label-volume-foreground = ${color.font5}
+label-muted-foreground = ${color.font5}
+
+label-volume-underline = ${color.font5}
+label-muted-underline = ${color.font5}
 
 ramp-volume-0 = "  "
 ramp-volume-1 = "  "
@@ -37,11 +41,12 @@ ramp-volume-7 = "  "
 ramp-volume-8 = "  "
 ramp-volume-9 = "  "
 ramp-volume-font = 2
-ramp-volume-foreground = ${color.font}
-ramp-volume-background = ${color.color6}
+ramp-volume-foreground = ${color.font5}
+ramp-volume-background = ${color.color5}
+ramp-volume-underline = ${color.font5}
 
 ramp-headphones-0 = 
-ramp-headphones-1 = 
+ramp-headphones-1 = »
 
 click-right = pavucontrol &
 
@@ -114,41 +119,33 @@ reverse-scroll = true
 
 fuzzy-match = true
 
-ws-icon-0=I;
-ws-icon-1=II;
-ws-icon-2=III;
-ws-icon-3=IV;
-ws-icon-4=V;
-ws-icon-5=VI;
-ws-icon-6=VII;漣
-ws-icon-default = 
-
 format = <label-state>
-format-font = 2
+format-font = 3
 
 label-monitor = %name%
 
 label-focused = %name%
-label-focused-foreground = ${color.blue}
-label-focused-background = ${color.background}
-label-focused-underline =  ${color.blue}
+label-focused-foreground = ${color.font5}
+label-focused-background = ${color.color2}
+label-focused-underline =  ${color.font5}
 label-focused-padding = 1
 
 label-occupied = %name%
-label-occupied-foreground = ${color.font}
-label-occupied-background = ${color.background}
+label-occupied-foreground = ${color.font4}
+label-occupied-background = ${color.color2}
 ;label-occupied-underline = 
 label-occupied-padding = 1
 
 label-urgent = %name%
-label-urgent-foreground = ${color.red}
-label-urgent-background = ${color.background}
-label-urgent-underline =  ${color.red}
+label-urgent-foreground = ${color.font1}
+label-urgent-background = ${color.color2}
+label-urgent-underline =  ${color.font1}
 label-urgent-padding = 1
 
 label-empty = %name%
 label-empty-foreground = ${color.foreground}
 label-empty-padding = 1
+label-empty-background = ${color.color2}
 
 ; Separator in between workspaces
 ;label-separator = "∙"
@@ -184,9 +181,12 @@ type = internal/cpu
 interval = 2
 format-prefix = "  "
 format-padding = 0
-format-prefix-foreground = ${color.font}
-format-foreground = ${color.font}
-format-background = ${color.color5}
+format-prefix-foreground = ${color.font4}
+format-prefix-underline = ${color.font4}
+
+format-foreground = ${color.font4}
+format-background = ${color.color4}
+format-underline = ${color.font4}
 label = "%{A1:terminal -e gtop &:}%percentage%% %{A}"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -198,13 +198,14 @@ format-margin = 0
 time = "%I:%M %p"
 time-alt = "%A, %m/%d/%y"
 
-format-prefix = 
-format-prefix-foreground = ${color.font}
-format-prefix-background = ${color.color1}
+;format-prefix = 
+;format-prefix-foreground = ${color.fontcenter}
+;format-prefix-background = ${color.center}
 
 label = %time%
-label-foreground = ${color.font}
-label-background = ${color.color1}
+label-foreground = ${color.fontcenter}
+label-background = ${color.center}
+label-underline = ${color.fontcenter}
 label-padding = 1
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -218,20 +219,24 @@ fixed-values = true
 
 format-mounted = <label-mounted>
 format-mounted-prefix = " "
-format-mounted-prefix-foreground = ${color.font}
-format-mounted-prefix-background = ${color.color3}
+format-mounted-prefix-foreground = ${color.font2}
+format-mounted-prefix-background = ${color.color2}
+format-mounted-prefix-underline = ${color.font2}
 
 format-unmounted = <label-unmounted>
 format-unmounted-prefix = " "
-format-unmounted-prefix-foreground = ${color.font}
-format-unmounted-prefix-background = ${color.color3}
+format-unmounted-prefix-foreground = ${color.font2}
+format-unmounted-prefix-background = ${color.color2}
+format-unmounted-prefix-underline = ${color.font2}
 
 label-mounted = "%{A1:terminal -e ncdu &:} %free%%{A} "
 label-unmounted = " %mountpoint%: NA"
-label-mounted-foreground = ${color.font}
+label-mounted-foreground = ${color.font2}
+label-mounted-underline = ${color.font2}
 
-label-mounted-background = ${color.color3}
-label-unmounted-background = ${color.color3}
+label-mounted-background = ${color.color2}
+label-unmounted-background = ${color.color2}
+label-unmounted-underline = ${color.font2}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -242,9 +247,10 @@ interval = 1
 
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${color.font}
-format-foreground = ${color.font}
-format-background = ${color.color4}
+format-prefix-foreground = ${color.font3}
+format-foreground = ${color.font3}
+format-background = ${color.color3}
+format-underline = ${color.font3}
 
 label = "%{A1:terminal -e htop &:} %mb_used% %{A}"
 
@@ -312,8 +318,9 @@ tail = true
 format = <label>
 exec = ~/.config/bspwm/polybar/script/scroll_spotify_status.sh
 
-label-background = ${color.color7}
-label-foreground = ${color.font}
+label-background = ${color.color6}
+label-foreground = ${color.font6}
+label-underline = ${color.font6}
 
 [module/icon-player]
 
@@ -321,8 +328,9 @@ type = custom/script
 exec = ~/.config/bspwm/polybar/script/player-mpris-tail.py -f ' {icon} '
 tail = true
 
-label-foreground = ${color.font}
-label-background = ${color.color7}
+label-foreground = ${color.font6}
+label-background = ${color.color6}
+label-underline = ${color.font6}
 
 [module/kernel]
 
@@ -332,6 +340,6 @@ tail = false
 interval = 1024
 format-prefix = "  "
 
-format-background = ${color.color2}
-format-foreground = ${color.font}
-
+format-background = ${color.color1}
+format-foreground = ${color.font1}
+format-underline = ${color.font1}

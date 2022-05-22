@@ -48,10 +48,6 @@ killall -9 picom sxhkd dunst ksuperkey
 # Launch notification daemon
 dunst -config $HOME/.config/bspwm/dunstrc &
 
-# Enable Super Keys For Menu
-ksuperkey -e 'Super_L=Alt_L|F1' &
-ksuperkey -e 'Super_R=Alt_L|F1' &
-
 # polkit agent
 if [[! 'pidof xfce-polkit']]; then
   /usr/lib/xfce-polkit/xfce-polkit &
@@ -68,13 +64,6 @@ dex -a -s ~/.config/autostart/
 # start compositor
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom --config $HOME/.config/bspwm/picom.conf &
-
-# replace neovim colorscheme
-sed -i "s/theme =.*$/theme = \"tokyonight\",/g" $HOME/.config/nvim/lua/chadrc.lua
-
-# change xfce4-terminal colorscheme
-XFCE_TERM_PATH="$HOME/.config/xfce4/terminal"
-cp "$XFCE_TERM_PATH"/colorschemes/tokyo-night "$XFCE_TERM_PATH"/terminalrc
 
 # fix Java GUI rendering - found in baskerville's dotfiles
 IRONIC_WM_NAME="LG3D"
