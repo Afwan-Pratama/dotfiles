@@ -19,12 +19,23 @@ altmagenta = #bb9af7
 altcyan = #0db9d7
 altwhite = #acb0d0
 
-color1 = #00000000
-color2 = #00000000
-color3 = #00000000
-color4 = #00000000
-color5 = #00000000
-color6 = #00000000
-color7 = #00000000
-color8 = #00000000
+center = #1a1b26
+fontcenter = #a9b1d6
 
+color1 = #1a1b26
+color2 = #1a1b26
+color3 = #1a1b26
+color4 = #1a1b26
+color5 = #1a1b26
+color6 = #1a1b26
+color7 = #1a1b26
+color8 = #1a1b26
+
+font1 = #f7768e
+font2 = #9ece6a
+font3 = #e0af68
+font4 = #7aa2f7
+font5 = #ad8ee6
+font6 = #449dab
+font7 = #ff7a93
+font8 = #b9f27c
