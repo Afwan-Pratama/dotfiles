@@ -1,25 +1,20 @@
-# MyConfigWM
+# Dotfiles for Nvidia User on Wayland
 
-My Config Window Manager for my Daily Use
+Dotfiles for my Daily Use
 
-## Bspwm
+## Desktop Setup
+-Hypr (Wayland Compositor)
 
--Bspwmrc (Bspwm config)
+-Waybar (Bar)
 
--Polybar (Bar)
+-Swaybg (Wallpaper)
 
--Sxhkd (Key Binding Daemon)
+-dex (Autostart Application)
 
--fehbg (Wallpaper Daemon)
+-dunst (Notification)
 
--dex (Autostart Application Daemon)
+-App Launcher (Wofi)
 
--dunst (Notification Daemon)
+-Alacritty (Terminal Emulator)
 
--Picom (Compositor)
-
-## Terminal Emulator
-
--Kitty (My Main Terminal Emulator)
-
--Alacritty (Optional)
+-Catppuccin (Theme)
