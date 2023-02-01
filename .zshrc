@@ -3,7 +3,7 @@
 eval "$(starship init zsh)"
 
 colorscript random
-
+export PATH=/home/xenom/.local/bin:$PATH
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ls='ls --color=auto -t'
@@ -27,7 +27,7 @@ alias gp='git push origin'
 alias gpl='git pull'
 alias gsw='git switch'
 alias gco='git checkout'
-alias v='nvim'
+alias v='lvim'
 alias co='cd Documents/Explore'
 alias cg='cd Documents/Github'
 alias cln='doas pacman -Rns $(pacman -Qtdq)'
@@ -37,6 +37,9 @@ HISTSIZE=500
 SAVEHIST=1000
 HISTFILE=.cache/zsh_history
 
+source ~/.zsh/zsh-syntax-highlighting.zsh
+
+# now load zsh-syntax-highlighting plugin
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
