@@ -1,82 +1,20 @@
--- ░█▀▀░█░░░█▀█░█▀█░█▀█░█░█
--- ░█▀▀░█░░░█░█░█▀▀░█▀▀░░█░
--- ░▀░░░▀▀▀░▀▀▀░▀░░░▀░░░░▀░
--- Banner generated using `toilet -f pagga AwesomeWM"
-
-local gears = require('gears')
-local beautiful = require('beautiful')
-local awful = require('awful')
-require('awful.autofocus')
-
--- ░█▀▀░█░█░█▀▀░█░░░█░░
--- ░▀▀█░█▀█░█▀▀░█░░░█░░
--- ░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀
-
-awful.util.shell = 'sh'
-
--- ░▀█▀░█░█░█▀▀░█▄█░█▀▀
--- ░░█░░█▀█░█▀▀░█░█░█▀▀
--- ░░▀░░▀░▀░▀▀▀░▀░▀░▀▀▀
-
-beautiful.init(require('theme'))
-
--- ░█░░░█▀█░█░█░█▀█░█░█░▀█▀
--- ░█░░░█▀█░░█░░█░█░█░█░░█░
--- ░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░░▀░
-local top = require('module.top-panel')
--- Set up each screen (add tags & panels)
-	awful.screen.connect_for_each_screen(function(s)
-		-- Add the top panel to every screen
-		top.create(s)
-	end)
-
--- ░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀░█░█░█▀▄░█▀█░▀█▀░▀█▀░█▀█░█▀█░█▀▀
--- ░█░░░█░█░█░█░█▀▀░░█░░█░█░█░█░█▀▄░█▀█░░█░░░█░░█░█░█░█░▀▀█
--- ░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀
-
-require('configuration.client')
-require('configuration.root')
-require('configuration.tags')
-root.keys(require('configuration.keys.global'))
-
--- ░█▄█░█▀█░█▀▄░█░█░█░░░█▀▀░█▀▀
--- ░█░█░█░█░█░█░█░█░█░░░█▀▀░▀▀█
--- ░▀░▀░▀▀▀░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀
-
-require('module.notifications')
-require('module.auto-start')
-require('module.exit-screen')
-require('module.quake-terminal')
-require('module.menu')
-require('module.titlebar')
-require('module.brightness-osd')
-require('module.volume-osd')
-require('module.lockscreen')
-require('module.dynamic-wallpaper')
-
--- ░█░█░█▀█░█░░░█░░░█▀█░█▀█░█▀█░█▀▀░█▀▄
--- ░█▄█░█▀█░█░░░█░░░█▀▀░█▀█░█▀▀░█▀▀░█▀▄
--- ░▀░▀░▀░▀░▀▀▀░▀▀▀░▀░░░▀░▀░▀░░░▀▀▀░▀░▀
-
-screen.connect_signal(
-	'request::wallpaper',
-	function(s)
-		-- If wallpaper is a function, call it with the screen
-		if beautiful.wallpaper then
-			if type(beautiful.wallpaper) == 'string' then
-
-				-- Check if beautiful.wallpaper is color/image
-				if beautiful.wallpaper:sub(1, #'#') == '#' then
-					-- If beautiful.wallpaper is color
-					gears.wallpaper.set(beautiful.wallpaper)
-
-				elseif beautiful.wallpaper:sub(1, #'/') == '/' then
-					-- If beautiful.wallpaper is path/image
-					gears.wallpaper.maximized(beautiful.wallpaper, s)
-				end
-			else
-				beautiful.wallpaper(s)
-			end
-		end
-	end
-)
+-----------------------------------------------------------------------------------------
+--  █████╗ ██╗    ██╗███████╗███████╗ ██████╗ ███╗   ███╗███████╗██╗    ██╗███╗   ███╗ --
+-- ██╔══██╗██║    ██║██╔════╝██╔════╝██╔═══██╗████╗ ████║██╔════╝██║    ██║████╗ ████║ --
+-- ███████║██║ █╗ ██║█████╗  ███████╗██║   ██║██╔████╔██║█████╗  ██║ █╗ ██║██╔████╔██║ --
+-- ██╔══██║██║███╗██║██╔══╝  ╚════██║██║   ██║██║╚██╔╝██║██╔══╝  ██║███╗██║██║╚██╔╝██║ --
+-- ██║  ██║╚███╔███╔╝███████╗███████║╚██████╔╝██║ ╚═╝ ██║███████╗╚███╔███╔╝██║ ╚═╝ ██║ --
+-- ╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝ ╚═╝     ╚═╝ --
+-----------------------------------------------------------------------------------------
+-- Initialising, order is important!
+require("awful.autofocus")
+require("src.theme.user_variables")
+require("src.theme.init")
+require("src.core.error_handling")
+require("src.core.signals")
+require("src.core.notifications")
+require("src.core.rules")
+require("mappings.global_buttons")
+require("mappings.bind_to_tags")
+require("crylia_bar.init")
+require("src.tools.auto_starter")(user_vars.autostart)
