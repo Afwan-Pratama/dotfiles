@@ -11,20 +11,20 @@ user_vars = {
   -- Autotiling layouts
   layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.top,
     awful.layout.suit.floating,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.corner.nw,
-    awful.layout.suit.corner.ne,
-    awful.layout.suit.corner.sw,
-    awful.layout.suit.corner.se,
-    awful.layout.suit.magnifier,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.corner.nw,
+    -- awful.layout.suit.corner.ne,
+    -- awful.layout.suit.corner.sw,
+    -- awful.layout.suit.corner.se,
+    -- awful.layout.suit.magnifier,
+    -- awful.layout.suit.max,
+    -- awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.spiral.dwindle,
   },
 
   -- Icon theme from /usr/share/icons
@@ -49,10 +49,10 @@ user_vars = {
 
   -- Set your font with this format:
   font = {
-    regular = "SFMono, 10",
-    bold = "SFMono, bold 10",
-    extrabold = "SFMono, ExtraBold 10",
-    specify = "SFMono"
+    regular = "Inter, 10",
+    bold = "Inter, bold 10",
+    extrabold = "Inter, ExtraBold 10",
+    specify = "Inter"
   },
 
   -- This is your default Terminal

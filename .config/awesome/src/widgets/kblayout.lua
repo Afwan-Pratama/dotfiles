@@ -23,7 +23,7 @@ return function(s)
               id = "icon",
               widget = wibox.widget.imagebox,
               resize = false,
-              image = gears.color.recolor_image(icondir .. "keyboard.svg", color["Grey900"])
+              image = gears.color.recolor_image(icondir .. "keyboard.svg", color["Black"])
             },
             id = "icon_layout",
             widget = wibox.container.place
@@ -47,8 +47,8 @@ return function(s)
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Green200"],
-    fg = color["Grey900"],
+    bg = color["Green"],
+    fg = color["Black"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
@@ -225,8 +225,8 @@ return function(s)
             local layout = stdout:gsub("\n", "")
             if kb_layout_item.keymap == layout then
               kb_layout_item.bg = color["DeepPurple200"]
-              kb_layout_item:get_children_by_id("background2")[1].fg = color["Grey900"]
-              kb_layout_item:get_children_by_id("background1")[1].fg = color["Grey900"]
+              kb_layout_item:get_children_by_id("background2")[1].fg = color["Black"]
+              kb_layout_item:get_children_by_id("background1")[1].fg = color["Black"]
             else
               kb_layout_item.bg = color["Grey800"]
               kb_layout_item:get_children_by_id("background2")[1].fg = color["Red200"]
@@ -280,7 +280,7 @@ return function(s)
       gears.shape.rounded_rect(cr, width, height, 12)
     end,
     widget = wibox.container.background,
-    bg = color["Grey900"],
+    bg = color["Black"],
     fg = color["White"],
     border_width = dpi(4),
     border_color = color["Grey800"],
@@ -288,7 +288,8 @@ return function(s)
     max_height = dpi(600),
     visible = false,
     ontop = true,
-    placement = function(c) awful.placement.align(c, { position = "top_right", margins = { right = dpi(255), top = dpi(60) } }) end
+    placement = function(c) awful.placement.align(c,
+      { position = "top_right", margins = { right = dpi(255), top = dpi(60) } }) end
   }
 
   kb_menu_widget:connect_signal(
@@ -296,7 +297,7 @@ return function(s)
     function()
       mousegrabber.run(
         function()
-          kblayout_widget.bg = color["Green200"]
+          kblayout_widget.bg = color["Green"]
           awesome.emit_signal("kblayout::hide:kbmenu")
           mousegrabber.stop()
           return true
@@ -352,7 +353,7 @@ return function(s)
   )
 
   -- Signals
-  Hover_signal(kblayout_widget, color["Green200"], color["Grey900"])
+  Hover_signal(kblayout_widget, color["Green"], color["Black"])
 
   local kblayout_keygrabber = awful.keygrabber {
     autostart = false,

@@ -11,20 +11,20 @@ case $1 in
     then
         if [[ -f "$iconPath" ]];
         then
-            if ! cmp --silent "$userIconPath.png" "$iconPath";
+            if ! cmp --silent "$userIconPath.jpg" "$iconPath";
             then
-                cp "$iconPath" "$userIconPath$USER.png"
+                cp "$iconPath" "$userIconPath$USER.jpg"
             fi
-            printf "$userIconPath.png"
+            printf "$userIconPath.jpg"
         else
-            printf "$userIconPath.png"
+            printf "$userIconPath.jpg"
         fi
         exit;
     else
         if [[ -f "$iconPath" ]];
         then
-            cp "$iconPath" "$userIconPath$USER.png"
-            printf "$userIconPath$USER.png"
+            cp "$iconPath" "$userIconPath$USER.jpg"
+            printf "$userIconPath$USER.jpg"
             exit;
         fi
     fi

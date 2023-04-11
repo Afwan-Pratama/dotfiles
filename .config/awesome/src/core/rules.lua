@@ -42,6 +42,51 @@ awful.rules.rules = {
     properties = { floating = true, titlebars_enabled = true }
   },
   {
+    rule_any = {
+      instance = {},
+      class = {
+        "Zotero",
+      },
+    },
+    properties = { floating = false }
+  },
+  -- workspaces 2
+  {
+    rule_any = {
+      class = {
+        "firefox",
+      }
+    },
+    properties = { tag = "2" }
+  },
+  --workspaces 4
+  -- {
+  --   rule_any = {
+  --     class = {
+  --       "steam"
+  --     }
+  --   },
+  --   properties = { tag = "4" }
+  -- },
+  -- --workspaces 8
+  -- {
+  --   rule_any = {
+  --     class = {
+  --       "discord"
+  --     }
+  --   },
+  --   properties = { tage = "8" }
+  -- },
+  -- --workspaces 9
+  -- {
+  --   rule_any = {
+  --     class = {
+  --       "Spotify",
+  --     }
+  --   },
+  --   properties = { tage = "9" }
+  -- },
+  {
     id = "titlebar",
     rule_any = {
       type = { "normal", "dialog", "modal", "utility" }
@@ -53,13 +98,13 @@ awful.rules.rules = {
 awful.spawn.easy_async_with_shell(
   "cat ~/.config/awesome/src/assets/rules.txt",
   function(stdout)
-  for class in stdout:gmatch("%a+") do
-    ruled.client.append_rule {
-      rule = { class = class },
-      properties = {
-        floating = true
-      },
-    }
+    for class in stdout:gmatch("%a+") do
+      ruled.client.append_rule {
+        rule = { class = class },
+        properties = {
+          floating = true
+        },
+      }
+    end
   end
-end
 )

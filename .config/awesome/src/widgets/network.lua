@@ -34,7 +34,7 @@ return function()
           {
             {
               id = 'icon',
-              image = gears.color.recolor_image(icondir .. "no-internet" .. ".svg", color["Grey900"]),
+              image = gears.color.recolor_image(icondir .. "no-internet" .. ".svg", color["Black"]),
               widget = wibox.widget.imagebox,
               resize = false
             },
@@ -61,8 +61,8 @@ return function()
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Red200"],
-    fg = color["Grey900"],
+    bg = color["Red"],
+    fg = color["Black"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
@@ -133,7 +133,10 @@ return function()
         function(stdout)
           local essid = stdout:match("SSID: (.-)\n") or "N/A"
           local bitrate = stdout:match("tx bitrate: (.+/s)") or "N/A"
-          local message = "Connected to <b>" .. essid .. "</b>\nSignal strength <b>" .. tostring(wifi_strength) .. "%</b>\n" .. "Bit rate <b>" .. tostring(bitrate) .. "</b>"
+          local message = "Connected to <b>" ..
+              essid ..
+              "</b>\nSignal strength <b>" ..
+              tostring(wifi_strength) .. "%</b>\n" .. "Bit rate <b>" .. tostring(bitrate) .. "</b>"
 
           if healthy then
             update_tooltip(message)
@@ -165,7 +168,8 @@ return function()
             update_wireless_data(false)
           end
           network_widget.container.network_layout.spacing = dpi(8)
-          network_widget.container.network_layout.icon_margin.icon_layout.icon:set_image(gears.color.recolor_image(icondir .. icon .. ".svg", color["Grey900"]))
+          network_widget.container.network_layout.icon_margin.icon_layout.icon:set_image(gears.color.recolor_image(icondir
+            .. icon .. ".svg", color["Black"]))
         end
       )
     end
@@ -261,7 +265,8 @@ return function()
     network_widget.container.network_layout.label.visible = false
     update_tooltip("Network unreachable")
     network_widget.container.network_layout.spacing = dpi(0)
-    network_widget.container.network_layout.icon_margin.icon_layout.icon:set_image(gears.color.recolor_image(icondir .. icon .. ".svg", color["Grey900"]))
+    network_widget.container.network_layout.icon_margin.icon_layout.icon:set_image(gears.color.recolor_image(icondir ..
+      icon .. ".svg", color["Black"]))
   end
 
   local check_network_mode = function()
@@ -324,7 +329,7 @@ return function()
   }
 
   -- Signals
-  Hover_signal(network_widget, color["Red200"], color["Grey900"])
+  Hover_signal(network_widget, color["Red"], color["Black"])
 
   network_widget:connect_signal(
     "button::press",

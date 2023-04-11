@@ -14,10 +14,10 @@ return function(s, widgets)
     screen = s,
     widget = wibox.container.background,
     ontop = false,
-    bg = color["Grey900"],
+    bg = color["Black"],
     visible = true,
     maximum_width = dpi(650),
-    placement = function(c) awful.placement.top_left(c, { margins = dpi(10) }) end,
+    placement = function(c) awful.placement.top_left(c, { margins = dpi(7) }) end,
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end
@@ -36,33 +36,33 @@ return function(s, widgets)
       if i == 1 then
         table.insert(layout,
           {
-          widget,
-          left = dpi(6),
-          right = dpi(3),
-          top = dpi(6),
-          bottom = dpi(6),
-          widget = wibox.container.margin
-        })
+            widget,
+            left = dpi(6),
+            right = dpi(3),
+            top = dpi(6),
+            bottom = dpi(6),
+            widget = wibox.container.margin
+          })
       elseif i == #widgets then
         table.insert(layout,
           {
-          widget,
-          left = dpi(3),
-          right = dpi(6),
-          top = dpi(6),
-          bottom = dpi(6),
-          widget = wibox.container.margin
-        })
+            widget,
+            left = dpi(3),
+            right = dpi(6),
+            top = dpi(6),
+            bottom = dpi(6),
+            widget = wibox.container.margin
+          })
       else
         table.insert(layout,
           {
-          widget,
-          left = dpi(3),
-          right = dpi(3),
-          top = dpi(6),
-          bottom = dpi(6),
-          widget = wibox.container.margin
-        })
+            widget,
+            left = dpi(3),
+            right = dpi(3),
+            top = dpi(6),
+            bottom = dpi(6),
+            widget = wibox.container.margin
+          })
       end
     end
     return layout

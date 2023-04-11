@@ -38,7 +38,7 @@ return function(s)
     if num_entries == 0 then
       systray.container.st:set_margins(0)
     else
-      systray.container.st:set_margins(dpi(6))
+      systray.container.st:set_margins(dpi(7))
     end
   end)
 

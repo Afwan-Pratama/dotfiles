@@ -141,15 +141,15 @@ return gears.table.join(
   --   { description = "Select previous layout", group = "Layout" }
   -- ),
   awful.key(
-    { modkey, "Shift" },
-    "#36",
+    { modkey },
+    "d",
     function()
       awful.layout.inc(1)
     end,
     { description = "Select next layout", group = "Layout" }
   ),
   awful.key(
-    { modkey , "Shift"},
+    { modkey, "Shift" },
     "Return",
     function()
       awful.spawn("rofi -show drun -theme ~/.config/awesome/rofi/rofi.rasi")
@@ -157,7 +157,7 @@ return gears.table.join(
     { descripton = "Application launcher", group = "Application" }
   ),
   awful.key(
-    { "Mod1" },
+    { modkey },
     "#23",
     function()
       awful.spawn("rofi -show window -theme ~/.config/awesome/rofi/window.rasi")
@@ -187,8 +187,8 @@ return gears.table.join(
       awful.spawn("flameshot full")
     end,
     { description = "Entire screen screenshot", group = "Applications" }
-  ),awful.key(
-    {modkey},
+  ), awful.key(
+    { modkey },
     "#107",
     function()
       awful.spawn("flameshot gui")
@@ -199,7 +199,7 @@ return gears.table.join(
   --   {modkey, "Shift"},
   --   "S",
   --   function ()
-  --    awful.spawn("spotify") 
+  --    awful.spawn("spotify")
   --   end,
   --   {description = "Music" , group = "Application"}
   -- ),
@@ -207,33 +207,33 @@ return gears.table.join(
   --   {modkey, "Shift"},
   --   "D",
   --   function ()
-  --    awful.spawn("discocss") 
+  --    awful.spawn("discocss")
   --   end,
   --   {description = "Discord" , group = "Application"}
   -- ),
   awful.key(
-    {modkey, "Shift"},
+    { modkey, "Shift" },
     "Right",
-    function ()
+    function()
       awesome.spawn("playerctl next")
     end,
-    { description = "next" , group = "playerctl"}
+    { description = "next", group = "playerctl" }
   ),
   awful.key(
-    {modkey, "Shift"},
+    { modkey, "Shift" },
     "Left",
-    function ()
+    function()
       awesome.spawn("playerctl previous")
     end,
-    { description = "previous" , group = "playerctl"}
+    { description = "previous", group = "playerctl" }
   ),
   awful.key(
-    {modkey, "Shift"},
+    { modkey, "Shift" },
     "Up",
-    function ()
+    function()
       awesome.spawn("playerctl play-pause")
     end,
-    { description = "toggle" , group = "playerctl"}
+    { description = "toggle", group = "playerctl" }
   ),
   awful.key(
     {},
@@ -278,7 +278,8 @@ return gears.table.join(
       awful.spawn.easy_async_with_shell(
         "pkexec xfpm-power-backlight-helper --get-brightness",
         function(stdout)
-          awful.spawn.easy_async_with_shell("pkexec xfpm-power-backlight-helper --set-brightness " .. tostring(tonumber(stdout) + BACKLIGHT_SEPS), function(stdou2)
+          awful.spawn.easy_async_with_shell("pkexec xfpm-power-backlight-helper --set-brightness " ..
+            tostring(tonumber(stdout) + BACKLIGHT_SEPS), function(stdou2)
 
           end)
           awesome.emit_signal("module::brightness_osd:show", true)
@@ -296,7 +297,8 @@ return gears.table.join(
       awful.spawn.easy_async_with_shell(
         "pkexec xfpm-power-backlight-helper --get-brightness",
         function(stdout)
-          awful.spawn.easy_async_with_shell("pkexec xfpm-power-backlight-helper --set-brightness " .. tostring(tonumber(stdout) - BACKLIGHT_SEPS), function(stdout2)
+          awful.spawn.easy_async_with_shell("pkexec xfpm-power-backlight-helper --set-brightness " ..
+            tostring(tonumber(stdout) - BACKLIGHT_SEPS), function(stdout2)
 
           end)
           awesome.emit_signal("module::brightness_osd:show", true)
@@ -361,7 +363,8 @@ return gears.table.join(
                     return
                   end
                 end
-                awful.spawn.with_shell("echo -n '" .. stdout:gsub("\n", "") .. ";' >> ~/.config/awesome/src/assets/rules.txt")
+                awful.spawn.with_shell("echo -n '" ..
+                  stdout:gsub("\n", "") .. ";' >> ~/.config/awesome/src/assets/rules.txt")
                 local c = mouse.screen.selected_tag:clients()
                 for j, client in ipairs(c) do
                   if client.class:match(stdout:gsub("\n", "")) then

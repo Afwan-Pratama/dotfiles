@@ -64,7 +64,7 @@ return function(widget)
             {
               id = "icon",
               widget = wibox.widget.imagebox,
-              image = gears.color.recolor_image(icon_dir .. "cpu.svg", color["Grey900"]),
+              image = gears.color.recolor_image(icon_dir .. "cpu.svg", color["Black"]),
               resize = false
             },
             id = "icon_layout",
@@ -89,8 +89,8 @@ return function(widget)
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Blue200"],
-    fg = color["Grey900"],
+    bg = color["Blue"],
+    fg = color["Black"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
@@ -120,7 +120,7 @@ return function(widget)
       if temp_num then
 
         if temp_num < 50 then
-          temp_color = color["Green200"]
+          temp_color = color["Green"]
           temp_icon = icon_dir .. "thermometer-low.svg"
         elseif temp_num >= 50 and temp_num < 80 then
           temp_color = color["Orange200"]
@@ -131,10 +131,10 @@ return function(widget)
         end
       else
         temp_num = "NaN"
-        temp_color = color["Green200"]
+        temp_color = color["Green"]
         temp_icon = icon_dir .. "thermometer-low.svg"
       end
-      Hover_signal(gpu_temp_widget, temp_color, color["Grey900"])
+      Hover_signal(gpu_temp_widget, temp_color, color["Black"])
       gpu_temp_widget.container.gpu_layout.icon_margin.icon_layout.icon:set_image(temp_icon)
       gpu_temp_widget:set_bg(temp_color)
       gpu_temp_widget.container.gpu_layout.label.text = tostring(temp_num) .. "°C"

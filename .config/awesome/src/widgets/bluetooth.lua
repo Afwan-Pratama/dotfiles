@@ -33,8 +33,8 @@ return function()
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Blue200"],
-    fg = color["Grey900"],
+    bg = color["Sky"],
+    fg = color["Black"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
@@ -68,21 +68,23 @@ return function()
           './.config/awesome/src/scripts/bt.sh',
           function(stdout2)
             if stdout2 == nil or stdout2:gsub("\n", "") == "" then
-              bluetooth_tooltip:set_text("Bluetooth is turned " .. bluetooth_state .. "\n" .. "You are currently not connected")
+              bluetooth_tooltip:set_text("Bluetooth is turned " ..
+                bluetooth_state .. "\n" .. "You are currently not connected")
             else
               connected_device = stdout2:gsub("%(", ""):gsub("%)", "")
-              bluetooth_tooltip:set_text("Bluetooth is turned " .. bluetooth_state .. "\n" .. "You are currently connected to:\n" .. connected_device)
+              bluetooth_tooltip:set_text("Bluetooth is turned " ..
+                bluetooth_state .. "\n" .. "You are currently connected to:\n" .. connected_device)
             end
           end
         )
       end
-      bluetooth_widget.icon_margin.icon_layout.icon:set_image(gears.color.recolor_image(icon .. ".svg", color["Grey900"]))
+      bluetooth_widget.icon_margin.icon_layout.icon:set_image(gears.color.recolor_image(icon .. ".svg", color["Black"]))
     end,
     bluetooth_widget
   )
 
   -- Signals
-  Hover_signal(bluetooth_widget, color["Blue200"], color["Grey900"])
+  Hover_signal(bluetooth_widget, color["Sky"], color["Black"])
 
   bluetooth_widget:connect_signal(
     "button::press",

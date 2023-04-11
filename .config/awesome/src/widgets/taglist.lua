@@ -77,7 +77,9 @@ local list_update = function(widget, buttons, label, data, objects)
     end
 
     -- Set the icon for each client
-    for _, client in ipairs(object:clients()) do
+    for _, c in ipairs(object:clients()) do
+      local margin_icon = dpi(9)
+      if c == client.focus then margin_icon = dpi(5) end
       tag_widget.container.margin:set_right(0)
       local icon = wibox.widget {
         {
@@ -85,15 +87,16 @@ local list_update = function(widget, buttons, label, data, objects)
           {
             id = "icon",
             resize = true,
-            widget = wibox.widget.imagebox
+            widget = wibox.widget.imagebox,
           },
           widget = wibox.container.place
         },
+        bg = color["Red"],
         forced_width = dpi(33),
-        margins = dpi(6),
+        margins = margin_icon,
         widget = wibox.container.margin
       }
-      icon.icon_container.icon:set_image(Get_icon(user_vars.icon_theme, client))
+      icon.icon_container.icon:set_image(Get_icon(user_vars.icon_theme, c))
       tag_widget.container:setup({
         icon,
         strategy = "exact",
@@ -124,9 +127,9 @@ local list_update = function(widget, buttons, label, data, objects)
       "button::press",
       function()
         if object == awful.screen.focused().selected_tag then
-          tag_widget.bg = '#bbbbbb' .. 'dd'
+          tag_widget.bg = color["White"] .. 'dd'
         else
-          tag_widget.bg = '#3A475C' .. 'dd'
+          tag_widget.bg = color['Black'] .. 'dd'
         end
       end
     )
@@ -135,9 +138,9 @@ local list_update = function(widget, buttons, label, data, objects)
       "button::release",
       function()
         if object == awful.screen.focused().selected_tag then
-          tag_widget.bg = '#dddddd' .. 'dd'
+          tag_widget.bg = color['White'] .. 'dd'
         else
-          tag_widget.bg = '#3A475C' .. 'dd'
+          tag_widget.bg = color['Black'] .. 'dd'
         end
       end
     )

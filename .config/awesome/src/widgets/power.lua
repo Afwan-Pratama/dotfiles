@@ -22,7 +22,7 @@ return function()
           {
             {
               id = "icon",
-              image = gears.color.recolor_image(icondir .. "power.svg", color["Grey900"]),
+              image = gears.color.recolor_image(icondir .. "power.svg", color["Black"]),
               widget = wibox.widget.imagebox,
               resize = false
             },

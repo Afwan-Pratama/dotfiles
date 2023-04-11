@@ -50,8 +50,8 @@ return function()
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Purple200"],
-    fg = color["Grey900"],
+    bg = color["Mauve"],
+    fg = color["Black"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
@@ -168,7 +168,7 @@ return function()
     )
   end
 
-  Hover_signal(battery_widget, color["Purple200"], color["Grey900"])
+  Hover_signal(battery_widget, color["Mauve"], color["Black"])
 
   battery_widget:connect_signal(
     'button::press',

@@ -64,9 +64,9 @@ return function(s)
               id = "volume_slider",
               bar_shape = gears.shape.rounded_rect,
               bar_height = dpi(10),
-              bar_color = color["Grey800"] .. "88",
-              bar_active_color = "#ffffff",
-              handle_color = "#ffffff",
+              bar_color = color["Surface2"] .. "88",
+              bar_active_color = color["White"],
+              handle_color = color["White"],
               handle_shape = gears.shape.circle,
               handle_width = dpi(10),
               handle_border_color = color["White"],
@@ -89,7 +89,7 @@ return function(s)
       right = dpi(24),
       widget = wibox.container.margin
     },
-    bg = color["Grey900"] .. '88',
+    bg = color["Black"] .. '88',
     widget = wibox.container.background,
     ontop = true,
     visible = true,
@@ -103,62 +103,63 @@ return function(s)
     awful.spawn.easy_async_with_shell(
       "./.config/awesome/src/scripts/vol.sh volume",
       function(stdout)
-      local volume_level = stdout:gsub("\n", ""):gsub("%%", "")
-      awesome.emit_signal("widget::volume")
-      volume_osd_widget.container.osd_layout.icon_slider_layout.label_value_layout.value:set_text(volume_level .. "%")
+        local volume_level = stdout:gsub("\n", ""):gsub("%%", "")
+        awesome.emit_signal("widget::volume")
+        volume_osd_widget.container.osd_layout.icon_slider_layout.label_value_layout.value:set_text(volume_level .. "%")
 
-      awesome.emit_signal(
-        "widget::volume:update",
-        volume_level
-      )
-
-      if awful.screen.focused().show_volume_osd then
         awesome.emit_signal(
-          "module::volume_osd:show",
-          true
+          "widget::volume:update",
+          volume_level
         )
+
+        if awful.screen.focused().show_volume_osd then
+          awesome.emit_signal(
+            "module::volume_osd:show",
+            true
+          )
+        end
+        volume_level = tonumber(volume_level)
+        local icon = icondir .. "volume"
+        if volume_level < 1 then
+          icon = icon .. "-mute"
+        elseif volume_level >= 1 and volume_level < 34 then
+          icon = icon .. "-low"
+        elseif volume_level >= 34 and volume_level < 67 then
+          icon = icon .. "-medium"
+        elseif volume_level >= 67 then
+          icon = icon .. "-high"
+        end
+        volume_osd_widget.container.osd_layout.icon_slider_layout.icon_margin1.icon_margin2.icon:set_image(icon .. ".svg")
       end
-      volume_level = tonumber(volume_level)
-      local icon = icondir .. "volume"
-      if volume_level < 1 then
-        icon = icon .. "-mute"
-      elseif volume_level >= 1 and volume_level < 34 then
-        icon = icon .. "-low"
-      elseif volume_level >= 34 and volume_level < 67 then
-        icon = icon .. "-medium"
-      elseif volume_level >= 67 then
-        icon = icon .. "-high"
-      end
-      volume_osd_widget.container.osd_layout.icon_slider_layout.icon_margin1.icon_margin2.icon:set_image(icon .. ".svg")
-    end
     )
   end
 
   volume_osd_widget.container.osd_layout.icon_slider_layout.slider_layout.volume_slider:connect_signal(
     "property::value",
     function()
-    update_osd()
-  end
+      update_osd()
+    end
   )
 
   local update_slider = function()
     awful.spawn.easy_async_with_shell(
       "./.config/awesome/src/scripts/vol.sh mute",
       function(stdout)
-      if stdout:match("yes") then
-        volume_osd_widget.container.osd_layout.icon_slider_layout.label_value_layout.value:set_text("0%")
-        volume_osd_widget.container.osd_layout.icon_slider_layout.icon_margin1.icon_margin2.icon:set_image(icondir .. "volume-mute" .. ".svg")
-      else
-        awful.spawn.easy_async_with_shell(
-          "./.config/awesome/src/scripts/vol.sh volume",
-          function(stdout2)
-          stdout2 = stdout2:gsub("%%", ""):gsub("\n", "")
-          volume_osd_widget.container.osd_layout.icon_slider_layout.slider_layout.volume_slider:set_value(tonumber(stdout2))
-          update_osd()
+        if stdout:match("yes") then
+          volume_osd_widget.container.osd_layout.icon_slider_layout.label_value_layout.value:set_text("0%")
+          volume_osd_widget.container.osd_layout.icon_slider_layout.icon_margin1.icon_margin2.icon:set_image(icondir ..
+            "volume-mute" .. ".svg")
+        else
+          awful.spawn.easy_async_with_shell(
+            "./.config/awesome/src/scripts/vol.sh volume",
+            function(stdout2)
+              stdout2 = stdout2:gsub("%%", ""):gsub("\n", "")
+              volume_osd_widget.container.osd_layout.icon_slider_layout.slider_layout.volume_slider:set_value(tonumber(stdout2))
+              update_osd()
+            end
+          )
         end
-        )
       end
-    end
     )
   end
 
@@ -166,15 +167,15 @@ return function(s)
   awesome.connect_signal(
     "module::slider:update",
     function()
-    update_slider()
-  end
+      update_slider()
+    end
   )
 
   awesome.connect_signal(
     "widget::volume:update",
     function(value)
-    volume_osd_widget.container.osd_layout.icon_slider_layout.slider_layout.volume_slider:set_value(tonumber(value))
-  end
+      volume_osd_widget.container.osd_layout.icon_slider_layout.slider_layout.volume_slider:set_value(tonumber(value))
+    end
   )
 
   update_slider()
@@ -182,7 +183,7 @@ return function(s)
   local volume_container = awful.popup {
     widget = wibox.container.background,
     ontop = true,
-    bg = color["Grey900"] .. "00",
+    bg = color["Black"] .. "00",
     stretch = false,
     visible = false,
     screen = s,
@@ -208,36 +209,36 @@ return function(s)
   awesome.connect_signal(
     "module::volume_osd:show",
     function()
-    if s == mouse.screen then
-      volume_container.visible = true
+      if s == mouse.screen then
+        volume_container.visible = true
+      end
     end
-  end
   )
 
   volume_container:connect_signal(
     "mouse::enter",
     function()
-    volume_container.visible = true
-    hide_volume_osd:stop()
-  end
+      volume_container.visible = true
+      hide_volume_osd:stop()
+    end
   )
 
   volume_container:connect_signal(
     "mouse::leave",
     function()
-    volume_container.visible = true
-    hide_volume_osd:again()
-  end
+      volume_container.visible = true
+      hide_volume_osd:again()
+    end
   )
 
   awesome.connect_signal(
     "widget::volume_osd:rerun",
     function()
-    if hide_volume_osd.started then
-      hide_volume_osd:again()
-    else
-      hide_volume_osd:start()
+      if hide_volume_osd.started then
+        hide_volume_osd:again()
+      else
+        hide_volume_osd:start()
+      end
     end
-  end
   )
 end

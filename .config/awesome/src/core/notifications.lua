@@ -23,7 +23,7 @@ naughty.config.defaults.shape = function(cr, width, height)
   gears.shape.rounded_rect(cr, width, height, dpi(10))
 end
 naughty.config.defaults.border_width = dpi(4)
-naughty.config.defaults.border_color = color["Grey800"]
+naughty.config.defaults.border_color = color["Black"]
 naughty.config.defaults.spacing = dpi(10)
 
 naughty.connect_signal(
@@ -43,16 +43,16 @@ naughty.connect_signal(
   "request::display",
   function(n)
     if n.urgency == "critical" then
-      n.title = string.format("<span foreground='%s' font='JetBrainsMono Nerd Font, ExtraBold 16'>%s</span>",
-        color["RedA200"], n.title) or ""
-      n.message = string.format("<span foreground='%s'>%s</span>", color["Red200"], n.message) or ""
-      n.app_name = string.format("<span foreground='%s'>%s</span>", color["RedA400"], n.app_name) or ""
-      n.bg = color["Grey900"]
+      n.title = string.format("<span foreground='%s' font='Inter Font, ExtraBold 16'>%s</span>",
+        color["Red"], n.title) or ""
+      n.message = string.format("<span foreground='%s'>%s</span>", color["Red"], n.message) or ""
+      n.app_name = string.format("<span foreground='%s'>%s</span>", color["Red"], n.app_name) or ""
+      n.bg = color["Black"]
     else
-      n.title = string.format("<span foreground='%s' font='JetBrainsMono Nerd Font, ExtraBold 16'>%s</span>",
+      n.title = string.format("<span foreground='%s' font='Inter Font, ExtraBold 16'>%s</span>",
         color["Pink200"], n.title) or ""
-      n.message = string.format("<span foreground='%s'>%s</span>", "#ffffffaa", n.message) or ""
-      n.bg = color["Grey900"]
+      n.message = string.format("<span foreground='%s'>%s</span>", color["White"] .. "aa", n.message) or ""
+      n.bg = color["Black"]
       n.timeout = n.timeout or 3
     end
 
@@ -62,15 +62,15 @@ naughty.connect_signal(
       n.actions = { naughty.action {
         program = "Spotify",
         id = "skip-prev",
-        icon = gears.color.recolor_image(icondir .. "skip-prev.svg", color["Cyan200"])
+        icon = gears.color.recolor_image(icondir .. "skip-prev.svg", color["Green"])
       }, naughty.action {
         program = "Spotify",
         id = "play-pause",
-        icon = gears.color.recolor_image(icondir .. "play-pause.svg", color["Cyan200"])
+        icon = gears.color.recolor_image(icondir .. "play-pause.svg", color["Green"])
       }, naughty.action {
         program = "Spotify",
         id = "skip-next",
-        icon = gears.color.recolor_image(icondir .. "skip-next.svg", color["Cyan200"])
+        icon = gears.color.recolor_image(icondir .. "skip-next.svg", color["Green"])
       } }
       use_image = true
     end
@@ -96,8 +96,8 @@ naughty.connect_signal(
           },
           forced_height = dpi(35),
           forced_width = dpi(35),
-          fg = color["Cyan200"],
-          bg = color["Grey800"],
+          fg = color["Green"],
+          bg = color["Surface2"],
           shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, dpi(6))
           end,
@@ -116,7 +116,7 @@ naughty.connect_signal(
             {
               {
                 id = "text_role",
-                font = "JetBrainsMono Nerd Font, Regular 12",
+                font = "Inter Font, Regular 12",
                 widget = wibox.widget.textbox
               },
               id = "centered",
@@ -125,8 +125,8 @@ naughty.connect_signal(
             margins = dpi(5),
             widget = wibox.container.margin
           },
-          fg = color["Green200"],
-          bg = color["Grey800"],
+          fg = color["Green"],
+          bg = color["Surface2"],
           shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, dpi(6))
           end,
@@ -150,8 +150,8 @@ naughty.connect_signal(
       style = {
         underline_normal = false,
         underline_selected = true,
-        bg_normal = color["Grey100"],
-        bg_selected = color["Grey200"]
+        bg_normal = color["White"],
+        bg_selected = color["White" .. "bb"]
       },
       widget = naughty.list.actions
     }
@@ -167,7 +167,7 @@ naughty.connect_signal(
                     {
                       {
                         {
-                          image = gears.color.recolor_image(icondir .. "notification-outline.svg", color["Teal200"]),
+                          image = gears.color.recolor_image(icondir .. "notification-outline.svg", color["Teal"]),
                           resize = false,
                           widget = wibox.widget.imagebox
                         },
@@ -182,7 +182,7 @@ naughty.connect_signal(
                       },
                       layout = wibox.layout.fixed.horizontal
                     },
-                    fg = color["Teal200"],
+                    fg = color["Teal"],
                     widget = wibox.container.background
                   },
                   margins = dpi(10),
@@ -196,7 +196,7 @@ naughty.connect_signal(
                       widget = wibox.widget.textbox
                     },
                     id = "background",
-                    fg = color["Teal200"],
+                    fg = color["Teal"],
                     widget = wibox.container.background
                   },
                   {
@@ -219,8 +219,8 @@ naughty.connect_signal(
                           id = "arc_chart"
                         },
                         id = "background",
-                        fg = color["Teal200"],
-                        bg = color["Grey900"],
+                        fg = color["Teal"],
+                        bg = color["Black"],
                         widget = wibox.container.background
                       },
                       strategy = "exact",
@@ -240,7 +240,7 @@ naughty.connect_signal(
                 layout = wibox.layout.align.horizontal
               },
               id = "arc_app_bg",
-              border_color = color["Grey800"],
+              border_color = color["Surface2"],
               border_width = dpi(2),
               widget = wibox.container.background
             },
@@ -309,8 +309,8 @@ naughty.connect_signal(
         widget = wibox.container.constraint
       },
       id = "background",
-      bg = color["Grey900"],
-      border_color = color["Grey800"],
+      bg = color["Black"],
+      border_color = color["Surface2"],
       border_width = dpi(4),
       shape = function(cr, width, height)
         gears.shape.rounded_rect(cr, width, height, 4)
@@ -318,7 +318,8 @@ naughty.connect_signal(
       widget = wibox.container.background
     }
 
-    local close = w_template.max_size.min_size.widget_layout.arc_app_bg.arc_app_layout.arc_app_layout_2.arc_margin.const.background
+    local close = w_template.max_size.min_size.widget_layout.arc_app_bg.arc_app_layout.arc_app_layout_2.arc_margin.const
+        .background
     local arc = close.arc_chart
 
     local timeout = n.timeout
@@ -354,7 +355,7 @@ naughty.connect_signal(
       )
     end
 
-    Hover_signal(close, color["Grey900"], color["Teal200"])
+    Hover_signal(close, color["Black"], color["Teal"])
 
     close:connect_signal(
       "button::press",
