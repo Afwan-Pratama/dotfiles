@@ -48,7 +48,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.98
+  opacity: 0.9
   # opacity: 1.0
 
   # Window decorations
@@ -128,8 +128,8 @@ font:
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
-    # family: Mononoki Nerd Font
-    family: SFMono
+    family: Mononoki Nerd Font
+    # family: SFMono
 
     # The `style` can be specified to pick a specific face.
     style: Medium
@@ -148,8 +148,8 @@ font:
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
-    # family: Mononoki Nerd Font
-    family: SFMono
+    family: Mononoki Nerd Font
+    # family: SFMono
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -168,8 +168,8 @@ font:
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
-    # family: Mononoki Nerd Font
-    family: SFMono
+    family: Mononoki Nerd Font
+    # family: SFMono
 
     # The `style` can be specified to pick a specific face.
     style: Regular Italic
@@ -188,14 +188,14 @@ font:
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
-    # family: Mononoki Nerd Font
-    family: SFMono
+    family: Mononoki Nerd Font
+    # family: SFMono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 9.0
+  size: 10.1
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -414,7 +414,7 @@ draw_bold_text_with_bright_colors: true
 visual_bell:
   animation: EaseOutExpo
   duration: 1000
-  color: '#ffffff'
+  color: "#ffffff"
 
 #selection:
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

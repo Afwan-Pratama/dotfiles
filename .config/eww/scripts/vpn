@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+streamVpn() {
+
+    GET_VPN=$(nmcli con | grep vpn)
+
+    GET_LIST_NAME=($(echo "$GET_VPN" | awk '{print $1}'))
+
+    GET_LIST_DEVICE=($(echo "$GET_VPN" | awk '{print $4}'))
+
+    printf '['
+
+    for i in "${!GET_LIST_NAME[@]}"; do
+
+        vpn_active=false
+
+        if [ $i -ne 0 ]; then
+            printf ', '
+        fi
+
+        if [[ "${GET_LIST_DEVICE[$i]}" != "--" ]]; then
+            vpn_active=true
+        fi
+
+        echo -n '{' '"name": "'"${GET_LIST_NAME[$i]}"'", "active" : '${vpn_active}' }'
+
+    done
+
+    printf ']\n'
+
+}
+
+streamVpn
+
+nmcli monitor | rg --line-buffered "primary connection" | while read -r _; do
+    streamVpn
+done

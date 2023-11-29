@@ -1,0 +1,34 @@
+@mixin sys-sliders() {
+  .slider {
+    @include slider($width: 0.8em, $slider: false);
+  }
+  .percent {
+    margin: $spacing;
+    min-width: 2.6em;
+  }
+  .icon {
+    margin: $spacing;
+    &:first-child {
+      font-size: 1.4em;
+    }
+    &.spotify {
+      color: $green;
+    }
+    &.Firefox {
+      color: $orange;
+    }
+    &.mpv {
+      color: $magenta;
+    }
+    &.discord {
+      color: $blue;
+    }
+  }
+  button {
+    @include button($flat: true);
+    margin-right: $spacing;
+    .icon {
+      margin: 0;
+    }
+  }
+}

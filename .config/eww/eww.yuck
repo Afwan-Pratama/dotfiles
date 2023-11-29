@@ -1,0 +1,30 @@
+(defvar     bluetooth       "{}")
+(defvar     network         "{}")
+(defvar     media           "{}")
+(defvar     media_positions "{}")
+(defvar     notifications   "{}")
+(defvar     apps            "{}")
+
+(deflisten  window      `scripts/hyprland window`)
+(deflisten  workspaces  `scripts/hyprland workspaces`)
+(deflisten  audiojson   `scripts/audiolevels`)
+;; (deflisten  vpn         `scripts/vpn`)
+
+(defpoll    volume      :interval "3s" :initial "{}" `scripts/volume get`)
+(defpoll    theme       :interval "3s" :initial "{}" `scripts/theme get`)
+
+(deflisten  events      :initial "[]" `scripts/events get`)
+(defpoll    weather     :interval "3m" :initial "[]" `scripts/weather`)
+
+(defpoll    panel_clock :interval "5s" `date "+%H:%M  |  %b. %d. %A"`)
+(defpoll    hour        :interval "5s" `date "+%H"`)
+(defpoll    minutes     :interval "5s" `date "+%M"`)
+(defpoll    date        :interval "5s" `date "+%b. %d. %A"`)
+(defpoll    uptime      :interval "60s" "uptime | awk '{print $3}' | tr ',' ' '")
+
+(defvar real_name "Xenom")
+(defvar user_name "@xenom")
+
+(include "./yuck/widgets.yuck")
+(include "./yuck/windows.yuck")
+(include "./setups/leftbar.yuck")

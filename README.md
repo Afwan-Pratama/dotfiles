@@ -3,6 +3,7 @@
 Dotfiles for my Daily Use
 
 ## Desktop Setup
+
 -Hypr (Wayland Compositor)
 
 -Waybar (Bar)
@@ -18,3 +19,9 @@ Dotfiles for my Daily Use
 -Alacritty (Terminal Emulator)
 
 -Catppuccin (Theme)
+
+### NB : to use zsh, you must add line below on your /etc/zsh/zshenv
+
+```sh
+export ZDOTDIR="$HOME"/.config/zsh
+```

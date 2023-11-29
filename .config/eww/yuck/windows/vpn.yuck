@@ -1,0 +1,14 @@
+(defwidget vpn_selector [] (box
+    :class "vpn"
+    :space-evenly false
+    (label
+          :class "title"
+          :text "VPN"
+    )
+    (for i in {vpn}
+   (eventbox
+          :class "vpn"
+      :text {i.name}
+    )
+      ) 
+    ))
