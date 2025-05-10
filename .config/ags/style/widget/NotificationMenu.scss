@@ -1,0 +1,22 @@
+@use "../theme";
+
+box.NotificationMenu {
+  background-color: theme.$bg;
+  border-radius: theme.$radius;
+  padding: 2em;
+
+  button {
+    background-color: theme.$bg;
+  }
+
+  box.image {
+    margin-right: 0.5rem;
+    border-radius: 9px;
+    min-width: 100px;
+    min-height: 100px;
+    background-size: cover;
+    background-position: center;
+
+  }
+
+}

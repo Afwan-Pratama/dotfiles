@@ -1,0 +1,21 @@
+@use "../theme.scss";
+
+box .ControlMenu {
+  background-color: theme.$bg;
+  color: theme.$fg;
+  padding: 2em;
+  border-radius: theme.$radius;
+  min-width: 400px;
+
+  button {
+    all: unset;
+    background-color: theme.$bg;
+  }
+
+  .AudioContainer {
+    border: 2px solid theme.$accent;
+    border-radius: theme.$radius;
+    padding: 1em 1em 0.6em 1em;
+
+  }
+}
