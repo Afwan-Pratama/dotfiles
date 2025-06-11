@@ -8,3 +8,4 @@ eggs/ags/*.css.map
 eggs/ags/app.js.map
 eggs/ags/traceify/
 eggs/ags/styles/variables.scss
+eggs/ags/utils/apikey.txt
