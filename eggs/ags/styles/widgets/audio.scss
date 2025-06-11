@@ -1,0 +1,6 @@
+@use "../variables.scss" as *;
+
+.audio-container {
+  padding: $window-padding;
+  min-width: 300px;
+}

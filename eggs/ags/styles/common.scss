@@ -1,0 +1,139 @@
+@use "sass:color";
+@use "sass:math";
+@use "variables" as *;
+
+* {
+  font-family: "Geist"; // {<replace_quoted(data.font.sans)>}
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+scale {
+  margin: 0;
+  padding: 0;
+
+  trough {
+    border-radius: calc(nth($window-border-radius, 1) * 99);
+
+    highlight {
+      background-color: $accent;
+      min-height: 25px;
+      // min-width: 25px;
+      border-radius: calc(nth($window-border-radius, 1) * 99);
+    }
+
+    slider {
+      box-shadow: none;
+      outline: unset;
+      background-color: transparent;
+    }
+  }
+}
+
+menubutton {
+  padding: 0;
+
+  button {
+    padding: unset;
+    margin: unset;
+    border-radius: calc(nth($window-border-radius, 1) / 2);
+
+    &:hover {
+      background-color: color.adjust($fg, $alpha: -0.85);
+    }
+  }
+}
+
+button {
+  padding: unset;
+  margin: unset;
+  border-radius: calc(nth($window-border-radius, 1) / 2);
+  background-color: transparent;
+  transition: transform 0.2s ease-in-out;
+
+  &:active {
+    >* {
+      transform: scale(0.85);
+    }
+  }
+
+  &:hover {
+    background-color: color.adjust($fg, $alpha: -0.85);
+  }
+}
+
+window {
+  background-color: transparent;
+
+  .button-padding {
+    background-color: transparent;
+  }
+}
+
+separator {
+  min-height: 2px;
+  margin: 0.3rem 0.5rem;
+  border-radius: calc(nth($window-border-radius, 1) * 99);
+
+  &.vertical {
+    min-height: unset;
+    min-width: 2px;
+    margin: 0.5rem 0.3rem;
+  }
+}
+
+.bar .icon {
+  font-size: 1.1rem;
+}
+
+$shadow-h: nth($bar-button-shadow-offset, 1);
+$shadow-v: nth($bar-button-shadow-offset, 2);
+
+.panel-button {
+  background-color: transparent;
+  box-shadow:
+    0 0 0 $bar-button-border-width $bar-button-border-color,
+    $bar-button-shadow-offset $bar-button-shadow-blur $bar-button-shadow-spread color.adjust($bar-button-shadow-color,
+      $alpha: calc($bar-button-shadow-opacity - 1));
+  color: $bar-button-fg-color;
+  border-radius: calc(nth($bar-button-border-radius, 1) / 2);
+  padding: $bar-button-padding;
+  margin-right: if($shadow-h > 0, $shadow-h, 0);
+  margin-left: if($shadow-h <=0, $shadow-h, 0);
+  margin-bottom: if($shadow-v > 0, $shadow-v, 0);
+  margin-top: if($shadow-v <=0, $shadow-v, 0);
+
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  &.notifications {
+    color: $bar-button-fg-color;
+
+    .circle {
+      border-radius: 99px;
+    }
+  }
+
+  &:hover {
+    background-color: if($bar-opacity < 1,
+        $bar-button-bg-color,
+        color.adjust($bar-button-fg-color, $alpha: -0.9));
+  }
+
+  &.active {
+    background-color: $accent;
+    color: $bar-button-bg-color;
+  }
+}
+
+.window-content {
+  background-color: color.adjust($bg, $alpha: calc($window-opacity - 1));
+  color: $fg;
+  margin: $window-margin;
+  box-shadow:
+    0 0 0 $window-border-width $window-border-color,
+    $window-shadow-offset $window-shadow-blur $window-shadow-spread color.adjust($window-shadow-color,
+      $alpha: calc($window-shadow-opacity - 1));
+  border-radius: $window-border-radius;
+}

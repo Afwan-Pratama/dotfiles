@@ -1,0 +1,88 @@
+@define-color accent_color #7e9cd8; /* {< replace_color(data.colors.base0D) >} */
+@define-color accent_bg_color #7e9cd8; /* {< replace_color(data.colors.base0D) >} */
+@define-color accent_fg_color #1f1f28; /* {< replace_color(data.colors.base00) >} */
+@define-color destructive_color #c34043; /* {< replace_color(data.colors.base08) >} */
+@define-color destructive_bg_color #c34043; /* {< replace_color(data.colors.base08) >} */
+@define-color destructive_fg_color #1f1f28; /* {< replace_color(data.colors.base00) >} */
+@define-color success_color #76946a; /* {< replace_color(data.colors.base0B) >} */
+@define-color success_bg_color #76946a; /* {< replace_color(data.colors.base0B) >} */
+@define-color success_fg_color #1f1f28; /* {< replace_color(data.colors.base00) >} */
+@define-color warning_color #957fb8; /* {< replace_color(data.colors.base0E) >} */
+@define-color warning_bg_color #957fb8; /* {< replace_color(data.colors.base0E) >} */
+@define-color warning_fg_color #1f1f28; /* {< replace_color(data.colors.base00) >} */
+@define-color error_color #c34043; /* {< replace_color(data.colors.base08) >} */
+@define-color error_bg_color #c34043; /* {< replace_color(data.colors.base08) >} */
+@define-color error_fg_color #1f1f28; /* {< replace_color(data.colors.base00) >} */
+@define-color window_bg_color #1f1f28; /* {< replace_color(data.colors.base00) >} */
+@define-color window_fg_color #dcd7ba; /* {< replace_color(data.colors.base05) >} */
+@define-color view_bg_color #1f1f28; /* {< replace_color(data.colors.base00) >} */
+@define-color view_fg_color #dcd7ba; /* {< replace_color(data.colors.base05) >} */
+@define-color headerbar_bg_color #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color headerbar_fg_color #dcd7ba; /* {< replace_color(data.colors.base05) >} */
+@define-color headerbar_border_color rgba(0, 0, 0, 0.7); 
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color rgba(0, 0, 0, 0.07);
+@define-color headerbar_darker_shade_color rgba(0, 0, 0, 0.07);
+@define-color sidebar_bg_color #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color sidebar_fg_color #dcd7ba; /* {< replace_color(data.colors.base05) >} */
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color sidebar_shade_color rgba(0, 0, 0, 0.07);
+@define-color secondary_sidebar_bg_color @sidebar_bg_color;
+@define-color secondary_sidebar_fg_color @sidebar_fg_color;
+@define-color secondary_sidebar_backdrop_color @sidebar_backdrop_color;
+@define-color secondary_sidebar_shade_color @sidebar_shade_color;
+@define-color card_bg_color #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color card_fg_color #dcd7ba; /* {< replace_color(data.colors.base05) >} */
+@define-color card_shade_color rgba(0, 0, 0, 0.07);
+@define-color dialog_bg_color #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color dialog_fg_color #dcd7ba; /* {< replace_color(data.colors.base05) >} */
+@define-color popover_bg_color #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color popover_fg_color #dcd7ba;/* {< replace_color(data.colors.base05) >} */ 
+@define-color popover_shade_color rgba(0, 0, 0, 0.07);
+@define-color shade_color rgba(0, 0, 0, 0.07);
+@define-color scrollbar_outline_color #223249; /* {< replace_color(data.colors.base02) >} */
+@define-color blue_1 #7e9cd8; /* {< replace_color(data.colors.base0D) >} */
+@define-color blue_2 #7e9cd8; /* {< replace_color(data.colors.base0D) >} */
+@define-color blue_3 #7e9cd8; /* {< replace_color(data.colors.base0D) >} */
+@define-color blue_4 #7e9cd8; /* {< replace_color(data.colors.base0D) >} */
+@define-color blue_5 #7e9cd8; /* {< replace_color(data.colors.base0D) >} */
+@define-color green_1 #76946a; /* {< replace_color(data.colors.base0B) >} */
+@define-color green_2 #76946a; /* {< replace_color(data.colors.base0B) >} */
+@define-color green_3 #76946a; /* {< replace_color(data.colors.base0B) >} */
+@define-color green_4 #76946a; /* {< replace_color(data.colors.base0B) >} */
+@define-color green_5 #76946a; /* {< replace_color(data.colors.base0B) >} */
+@define-color yellow_1 #c0a36e; /* {< replace_color(data.colors.base0A) >} */
+@define-color yellow_2 #c0a36e; /* {< replace_color(data.colors.base0A) >} */
+@define-color yellow_3 #c0a36e; /* {< replace_color(data.colors.base0A) >} */
+@define-color yellow_4 #c0a36e; /* {< replace_color(data.colors.base0A) >} */
+@define-color yellow_5 #c0a36e; /* {< replace_color(data.colors.base0A) >} */
+@define-color orange_1 #ffa066; /* {< replace_color(data.colors.base09) >} */
+@define-color orange_2 #ffa066; /* {< replace_color(data.colors.base09) >} */
+@define-color orange_3 #ffa066; /* {< replace_color(data.colors.base09) >} */
+@define-color orange_4 #ffa066; /* {< replace_color(data.colors.base09) >} */
+@define-color orange_5 #ffa066; /* {< replace_color(data.colors.base09) >} */
+@define-color red_1 #c34043; /* {< replace_color(data.colors.base08) >} */
+@define-color red_2 #c34043; /* {< replace_color(data.colors.base08) >} */
+@define-color red_3 #c34043; /* {< replace_color(data.colors.base08) >} */
+@define-color red_4 #c34043; /* {< replace_color(data.colors.base08) >} */
+@define-color red_5 #c34043; /* {< replace_color(data.colors.base08) >} */
+@define-color purple_1 #957fb8; /* {< replace_color(data.colors.base0E) >} */
+@define-color purple_2 #957fb8; /* {< replace_color(data.colors.base0E) >} */
+@define-color purple_3 #957fb8; /* {< replace_color(data.colors.base0E) >} */
+@define-color purple_4 #957fb8; /* {< replace_color(data.colors.base0E) >} */
+@define-color purple_5 #957fb8; /* {< replace_color(data.colors.base0E) >} */
+@define-color brown_1 #d27e99; /* {< replace_color(data.colors.base0F) >} */
+@define-color brown_2 #d27e99; /* {< replace_color(data.colors.base0F) >} */
+@define-color brown_3 #d27e99; /* {< replace_color(data.colors.base0F) >} */
+@define-color brown_4 #d27e99; /* {< replace_color(data.colors.base0F) >} */
+@define-color brown_5 #d27e99; /* {< replace_color(data.colors.base0F) >} */
+@define-color light_1 #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color light_2 #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color light_3 #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color light_4 #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color light_5 #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color dark_1 #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color dark_2 #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color dark_3 #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color dark_4 #16161d; /* {< replace_color(data.colors.base01) >} */
+@define-color dark_5 #16161d; /* {< replace_color(data.colors.base01) >} */

@@ -1,0 +1,55 @@
+@use "../variables" as *;
+
+.datemenu-container {
+  padding: $window-padding;
+
+  .time {
+    font-size: 1.5rem;
+  }
+
+  .date {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  calendar {
+    background-color: transparent;
+    border: unset;
+
+    header {
+      padding-bottom: 0.3rem;
+      border: unset;
+    }
+
+    grid>* {
+      border-radius: $window-border-radius;
+      outline-color: $accent;
+      // outline: unset;
+    }
+
+    .day-number {
+      &:selected {
+        color: $bg;
+        background-color: $accent;
+      }
+    }
+
+    .today {
+      border-radius: $window-border-radius;
+      box-shadow: 0 0 0 0.1rem $accent;
+    }
+  }
+}
+
+.weathers-container {
+  padding: $window-padding;
+
+  .weather-card {
+    padding: $window-padding;
+    border-width: $window-border-width;
+    border-style: solid;
+    border-color: $window-border-color;
+    border-radius: $window-border-radius;
+  }
+
+}

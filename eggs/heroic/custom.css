@@ -1,0 +1,127 @@
+body.custom {
+	/* {#replace_color(data.colors.base05)#} */
+	--text-default: #dcd7ba;
+	/* {#replace_color(data.colors.base06)#} */
+	--text-secondary: #c8c093;
+	/* {#replace_color(data.colors.base00)#} */
+	--text-tertiary: #1f1f28;
+
+	/* {#replace_color(data.colors.base00)#} */
+	--background: #1f1f28;
+	/* {#replace_color(data.colors.base01)#} */
+	--background-darker: #16161d;
+	/* {#replace_color(data.colors.base02)#} */
+	--background-lighter: #223249;
+	/* {#replace_color(data.colors.base00)#} */
+	--body-background: #1f1f28;
+	/* {#replace_color(data.colors.base00)#} */
+	--gradient-body-background: #1f1f28;
+	/* {#replace_color(data.colors.base02)#} */
+	--input-background: #223249;
+	--controller-hints-background: transparent;
+	/* {#replace_color(data.colors.base00)#} */
+	--current-background: #1f1f28;
+	/* {#replace_color(data.colors.base00)#} */
+	--modal-background: #1f1f28;
+	/* {#replace_color(data.colors.base0D)#} */
+	--modal-border: #7e9cd8;
+	/* {#replace_color(data.colors.base00)#} */
+	--osk-background: #1f1f28;
+	/* {#replace_color(data.colors.base03)#} */
+	--osk-button-background: #54546d;
+	/* {#replace_color(data.colors.base00)#} */
+	--osk-button-border: #1f1f28;
+	/* {#replace_color(data.colors.base02)#} */
+	--search-bar-background: #223249;
+	/* {#replace_color(data.colors.base02)#} */
+	--search-bar-border: #223249;
+
+	/* {#replace_color(data.colors.base05)#} */
+	--action-icon: #dcd7ba;
+	/* {#replace_color(data.colors.base04)#} */
+	--action-icon-hover: #727169;
+	/* {#replace_color(data.colors.base0D)#} */
+	--action-icon-active: #7e9cd8;
+	/* {#replace_color(data.colors.base00)#} */
+	--icons-background: #1f1f28;
+
+	/* {#replace_color(data.colors.base0D)#} */
+	--brand-primary: #7e9cd8;
+	/* {#replace_color(data.colors.base04)#} */
+	--brand-primary-hover: #727169;
+
+	/* {#replace_color(data.colors.base0D)#} */
+	--primary-button: #7e9cd8;
+	/* {#replace_color(data.colors.base0D)#} */
+	--primary-button-overlay: #7e9cd8;
+	/* {#replace_color(data.colors.base0D)#} */
+	--secondary-button: #7e9cd8;
+	/* {#replace_color(data.colors.base0D)#} */
+	--secondary-button-overlay: #7e9cd8;
+	/* {#replace_color(data.colors.base0D)#} */
+	--tertiary-button: #7e9cd8;
+	/* {#replace_color(data.colors.base0D)#} */
+	--tertiary-button-overlay: #7e9cd8;
+	/* {#replace_color(data.colors.base0B)#} */
+	--success-button: #76946a;
+	/* {#replace_color(data.colors.base01)#} */
+	--disabled-button: #16161d;
+	/* {#replace_color(data.colors.base00)#} */
+	--disabled-button-overlay: #1f1f28;
+
+	/* {#replace_color(data.colors.base0D)#} */
+	--navbar-active: #7e9cd8;
+	/* {#replace_color(data.colors.base05)#} */
+	--navbar-inactive: #dcd7ba;
+	/* {#replace_color(data.colors.base02)#} */
+	--navbar-active-background: #223249;
+	/* {#replace_color(data.colors.base0D)#} */
+	--navbar-accent: #7e9cd8;
+	/* {#replace_color(data.colors.base01)#} */
+	--navbar-background: #16161d;
+	/* {#replace_color(data.colors.base01)#} */
+	--divider: #16161d;
+
+	/* {#replace_color(data.colors.base0B)#} */
+	--success: #76946a;
+	/* {#replace_color(data.colors.base06)#} */
+	--success-hover: #c8c093;
+	/* {#replace_color(data.colors.base0A)#} */
+	--danger: #c0a36e;
+	/* {#replace_color(data.colors.base06)#} */
+	--danger-hover: #c8c093;
+
+	/* {#replace_color(data.colors.base0D)#} */
+	--primary: #7e9cd8;
+	/* {#replace_color(data.colors.base0D)#} */
+	--secondary: #7e9cd8;
+	/* {#replace_color(data.colors.base0D)#} */
+	--accent: #7e9cd8;
+
+	/* {#replace_color(data.colors.base0B)#} */
+	--status-success: #76946a;
+	/* {#replace_color(data.colors.base0A)#} */
+	--status-warning: #c0a36e;
+	/* {#replace_color(data.colors.base08)#} */
+	--status-danger: #c34043;
+	/* {#replace_color(data.colors.base0D)#} */
+	--status-info: #7e9cd8;
+
+	/* {#replace_color(data.colors.base00)#} */
+	--neutral-01: #1f1f28;
+	/* {#replace_color(data.colors.base01)#} */
+	--neutral-02: #16161d;
+	/* {#replace_color(data.colors.base02)#} */
+	--neutral-03: #223249;
+	/* {#replace_color(data.colors.base04)#} */
+	--neutral-04: #727169;
+	/* {#replace_color(data.colors.base05)#} */
+	--neutral-05: #dcd7ba;
+	/* {#replace_color(data.colors.base06)#} */
+	--neutral-06: #c8c093;
+}
+
+body.custom select,
+body.custom input {
+	box-shadow: none !important;
+}

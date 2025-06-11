@@ -1,0 +1,115 @@
+@use "sass:color";
+@use "sass:math";
+@use "../variables" as *;
+
+.notifications-container {
+  min-width: 400px;
+  min-height: 420px;
+  separator {
+    margin: $window-padding;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+  .window-header {
+    padding: $window-padding;
+    padding-bottom: 0;
+
+    .dnd {
+      margin-right: 0.5rem;
+      background-color: color.adjust($fg, $alpha: -0.9);
+      padding: 0 0.6rem;
+
+      &.active {
+        color: $bg;
+        background-color: $fg;
+
+        &:hover {
+          background-color: color.adjust($fg, $alpha: -0.2);
+        }
+      }
+
+      &:hover {
+        background-color: color.adjust($fg, $alpha: -0.7);
+      }
+      label {
+        font-size: 0.95rem;
+      }
+    }
+
+    .clear {
+      padding: 0.2rem 0.5rem;
+    }
+
+    label {
+      font-size: 1.2rem;
+    }
+  }
+
+  scrolledwindow viewport > box {
+    .not-found label {
+      font-size: 1rem;
+    }
+    margin: $window-padding;
+    margin-top: 1px;
+  }
+
+  .notification-container {
+    min-width: 1px;
+    margin: $window-border-width;
+    background-color: color.adjust($fg, $alpha: -0.9);
+    box-shadow: none;
+  }
+}
+
+.notification-container {
+  padding: $window-padding;
+  min-width: 330px;
+
+  &.critical {
+    box-shadow: 0 0 0 0.1rem $red;
+  }
+
+  .header {
+    .time {
+      margin-right: 0.5rem;
+    }
+
+    button {
+      padding: 0 0.3rem;
+      background-color: color.adjust($fg, $alpha: -0.9);
+      border-radius: calc(nth($window-border-radius, 1) / 2);
+    }
+  }
+
+  separator {
+    margin: 0.4rem 0;
+  }
+
+  .content {
+    .summary {
+      font-size: 1.2rem;
+    }
+
+    .body {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    .image image {
+      border-radius: calc(nth($window-border-radius, 1) / 1.5);
+      min-width: 60px;
+      min-height: 60px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  .actions {
+    margin-top: 0.5rem;
+    button {
+      padding: 0.1rem 0;
+      background-color: color.adjust($fg, $alpha: -0.9);
+      border-radius: calc(nth($window-border-radius, 1) / 2);
+    }
+  }
+}

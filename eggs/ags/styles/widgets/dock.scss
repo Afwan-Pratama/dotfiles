@@ -1,0 +1,59 @@
+@use "../variables.scss" as *;
+@use "sass:color";
+
+.dock-padding {
+  color: transparent;
+  padding: 1px;
+}
+
+.dock-container {
+  padding: $window-dock-padding;
+
+  .media-player {
+    min-width: 180px;
+    background-color: color.adjust($fg, $alpha: -0.75);
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: $window-border-radius;
+
+    .cover {
+      border-radius: $window-border-radius;
+      margin-right: 0.3rem;
+    }
+  }
+
+  .app-button {
+    image {
+      transition: -gtk-icon-size cubic-bezier(0.25, 1, 0.5, 1) 100ms;
+    }
+
+    .box {
+      padding: 0.2rem;
+      min-width: 45px;
+      min-height: 45px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      image {
+        margin-bottom: 10px;
+        -gtk-icon-size: 40px;
+      }
+    }
+
+    &.focused {
+      .indicator {
+        min-width: 25px;
+      }
+    }
+
+    .indicator {
+      min-width: 4px;
+      min-height: 4px;
+      border-radius: 99px;
+      background-color: $accent;
+      margin-bottom: 3px;
+      transition: min-width 0.4s ease-in-out;
+    }
+  }
+}

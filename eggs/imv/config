@@ -1,0 +1,7 @@
+[options]
+# {#replace_value(data.colorsAlt.base01)#}
+background=16161d
+# {#replace_value(data.colorsAlt.base05)#}
+overlay_text_color=dcd7ba
+# {#replace_value(data.colorsAlt.base00)#}
+overlay_background_color=1f1f28
