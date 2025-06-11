@@ -1,0 +1,5 @@
+#!/bin/bash
+ags run --gtk4
+sleep 2
+pkill gjs
+ags run --gtk4

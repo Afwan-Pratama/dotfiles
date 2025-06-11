@@ -161,7 +161,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "caelestia" "shell"
-spawn-at-startup "bash" "-c" "ags run --gtk4"
+spawn-at-startup "bash" "-c" "~/.config/niri/agsrun"
 spawn-at-startup "dex" "-a" "-s ~/.config/autostart"
 spawn-at-startup "bash" "-c" "~/.config/niri/gtk"
 spawn-at-startup "hyprpaper"
