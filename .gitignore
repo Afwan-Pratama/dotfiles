@@ -1,10 +1,10 @@
 /.git
 /.deployed_cache
 /.yolk_git
-/eggs/ags/node_modules/
-/eggs/ags/@girs/
-/eggs/ags/style.css
-/eggs/ags/*.css.map
-/eggs/ags/app.js.map
-/eggs/ags/traceify/
-/eggs/ags/styles/variables.scss
+eggs/ags/node_modules/
+eggs/ags/@girs/
+eggs/ags/style.css
+eggs/ags/*.css.map
+eggs/ags/app.js.map
+eggs/ags/traceify/
+eggs/ags/styles/variables.scss
