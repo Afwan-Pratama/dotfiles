@@ -120,7 +120,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7e9cd8" // {<replace_color(data.colors.base0D)>}
+        // active-color "#7e9cd8" // {<replace_color(data.colors.base0D)>}
 
         // Color of the ring on inactive monitors.
         inactive-color "#1f1f28" // {<replace_color(data.colors.base00)>}
@@ -132,7 +132,7 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         //
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+        active-gradient from="#739cd8" to="#76946a" angle=45
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.
@@ -160,14 +160,11 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "caelestia" "shell"
-spawn-at-startup "bash" "-c" "~/.config/niri/agsrun"
 spawn-at-startup "dex" "-a" "-s ~/.config/autostart"
 spawn-at-startup "bash" "-c" "~/.config/niri/gtk"
-spawn-at-startup "hyprpaper"
 
 environment {
-    DISPLAY ":2"
+    // DISPLAY ":0"
     QT_QPA_PLATFORMTHEME "qt5ct"
     XCURSOR_THEME "vimix-kanagawa-cursors-wave" // {<replace_quoted(data.cursor.nameAlt)>}
     XCURSOR_SIZE "24" 
@@ -176,9 +173,9 @@ environment {
     XDG_SESSION_TYPE "wayland"
     NVD_BACKEND "direct"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
+    _JAVA_AWT_WM_NONREPARENTING "1"
 }
 
-spawn-at-startup "xwayland-satellite"
 
 cursor {
     xcursor-theme "vimix-kanagawa-cursors-wave" // {<replace_quoted(data.cursor.nameAlt)>}
@@ -246,6 +243,7 @@ window-rule {
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^zen$"#
     match app-id=r#"^heroic$"#
+    match app-id=r#"^moe.launcher.the-honkers-railway-launcher$"#
     default-column-width {}
 }
 

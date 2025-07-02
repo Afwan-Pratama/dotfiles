@@ -213,7 +213,10 @@ export default function DockApps() {
 		<box cssClasses={["window-content", "dock-container"]} hexpand={false}>
 			<AppsList />
 			{bind(mpris, "players").as((players) => (
-				<MediaPlayer player={players[0]} />
+				<>
+					{/* <button iconName={players[0].entry === "zen" ? "zen-browser" : players[0].entry} onScroll={() => print("halo")} /> */}
+					<MediaPlayer player={players[0]} />
+				</>
 			))}
 			<Gtk.Separator orientation={Gtk.Orientation.VERTICAL} />
 			<AppButton

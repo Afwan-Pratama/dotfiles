@@ -184,5 +184,10 @@ export let eggs = #{
 		enabled: true,
 		templates: ["zathurarc"]
 	},
+	MangoHud: #{
+		targets: "~/.config/MangoHud",
+		enabled: true,
+		templates: ["MangoHud.conf"]
+	},
 
 };

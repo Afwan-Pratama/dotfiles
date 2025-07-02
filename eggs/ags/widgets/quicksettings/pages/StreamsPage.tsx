@@ -2,10 +2,11 @@ import { bind } from "astal";
 import { Gtk } from "astal/gtk4";
 import AstalWp from "gi://AstalWp?version=0.1";
 import { qsPage } from "../QSWindow";
+import Pango from "gi://Pango?version=1.0";
 
 
 type StreamContainerProps = {
-	stream: AstalWp.Endpoint
+	stream: AstalWp.Stream
 }
 
 function StreamContainer({ stream }: StreamContainerProps) {
@@ -56,7 +57,7 @@ export default function StreamsPage() {
 					<box vertical spacing={2}>
 						<box spacing={6}>
 							<image iconName={bind(s, "icon").as(v => v)} />
-							<label label={bind(s, "name").as(v => v)} />
+							<label maxWidthChars={15} ellipsize={Pango.EllipsizeMode.END} label={bind(s, "name").as(v => v)} />
 						</box>
 						<StreamContainer stream={s} />
 					</box>

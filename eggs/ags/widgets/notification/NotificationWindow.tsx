@@ -12,9 +12,9 @@ const { bar } = options;
 const layout = Variable.derive(
 	[bar.position, bar.start, bar.center, bar.end],
 	(pos, start, center, end) => {
-		if (start.includes("notification")) return `${pos}_left`;
+		if (start.includes("notification")) return `${pos}_top`;
 		if (center.includes("notification")) return `${pos}_center`;
-		if (end.includes("notification")) return `${pos}_right`;
+		if (end.includes("notification")) return `${pos}_bottom`;
 
 		return `${pos}_center`;
 	},
