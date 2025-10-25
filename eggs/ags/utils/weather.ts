@@ -31,7 +31,8 @@ export class Weather extends GObject.Object {
 	constructor() {
 		super()
 
-		interval(weathers.update_interval * 60 * 1000, () =>
+		interval(weathers.update_interval * 60 * 1000, () => {
+			this.#weathers = []
 			weathers.code.map((w) => {
 				execAsync([
 					"curl",
@@ -49,6 +50,7 @@ export class Weather extends GObject.Object {
 					})
 					.catch((err) => console.log(err))
 			})
+		}
 
 		);
 

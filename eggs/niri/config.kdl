@@ -160,11 +160,10 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "dex" "-a" "-s ~/.config/autostart"
-spawn-at-startup "bash" "-c" "~/.config/niri/gtk"
+spawn-sh-at-startup "dex -a -s ~/.config/autostart"
+spawn-sh-at-startup "~/.config/niri/gtk"
 
 environment {
-    // DISPLAY ":0"
     QT_QPA_PLATFORMTHEME "qt5ct"
     XCURSOR_THEME "vimix-kanagawa-cursors-wave" // {<replace_quoted(data.cursor.nameAlt)>}
     XCURSOR_SIZE "24" 
@@ -244,6 +243,7 @@ window-rule {
     match app-id=r#"^zen$"#
     match app-id=r#"^heroic$"#
     match app-id=r#"^moe.launcher.the-honkers-railway-launcher$"#
+    match app-id=r#"^dev.zed.Zed"#
     default-column-width {}
 }
 

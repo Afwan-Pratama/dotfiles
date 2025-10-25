@@ -10,6 +10,8 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GOPATH="$XDG_DATA_HOME"/go
 export PATH="$HOME/.local/bin:$PATH"
 
+export TAURI_SIGNING_PRIVATE_KEY="$HOME/.tauri/tobacco-app.key"
+
 export EDITOR=nvim
 
 alias cln='sudo pacman -Rns $(pacman -Qtdq)'
