@@ -1,0 +1,17 @@
+layout {
+	focus-ring {
+		inactive-color "#1f1f28"
+
+		active-gradient from="#76946a" to="#c0a36e" angle=45
+
+	}
+
+  shadow {
+        on
+        softness 30
+        spread 5
+        offset x=0 y=5
+        draw-behind-window true
+        color "#1f1f28"
+  }
+}

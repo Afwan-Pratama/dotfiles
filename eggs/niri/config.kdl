@@ -1,7 +1,4 @@
-// workspace "internet"
-// workspace "games"
-// workspace "multimedia"
-// workspace "education"
+include "color.kdl"
 
 input {
     keyboard {
@@ -114,32 +111,7 @@ layout {
         // How many logical pixels the ring extends out from the windows.
         width 2
 
-        // Colors can be set in a variety of ways:
-        // - CSS named colors: "red"
-        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
-        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
-
-        // Color of the ring on the active monitor.
-        // active-color "#7e9cd8" // {<replace_color(data.colors.base0D)>}
-
-        // Color of the ring on inactive monitors.
-        inactive-color "#1f1f28" // {<replace_color(data.colors.base00)>}
-
-        // You can also use gradients. They take precedence over solid colors.
-        // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
-        // The angle is the same as in linear-gradient, and is optional,
-        // defaulting to 180 (top-to-bottom gradient).
-        // You can use any CSS linear-gradient tool on the web to set these up.
-        // Changing the color space is also supported, check the wiki for more info.
-        //
-        active-gradient from="#739cd8" to="#76946a" angle=45
-
-        // You can also color the gradient relative to the entire view
-        // of the workspace, rather than relative to just the window itself.
-        // To do that, set relative-to="workspace-view".
-        //
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-    }
+   }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // You can think of them as a kind of outer gaps. They are set in logical pixels.
@@ -161,7 +133,6 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-sh-at-startup "dex -a -s ~/.config/autostart"
-spawn-sh-at-startup "~/.config/niri/gtk"
 
 environment {
     QT_QPA_PLATFORMTHEME "qt5ct"
@@ -175,6 +146,9 @@ environment {
     _JAVA_AWT_WM_NONREPARENTING "1"
 }
 
+config-notification {
+    disable-failed
+}
 
 cursor {
     xcursor-theme "vimix-kanagawa-cursors-wave" // {<replace_quoted(data.cursor.nameAlt)>}
@@ -188,7 +162,6 @@ cursor {
 layer-rule {
     // This is for swaybg; change for other wallpaper tools.
     // Find the right namespace by running niri msg layers.
-    match namespace="^hyprpaper$"
     place-within-backdrop true
 }
 
@@ -279,14 +252,14 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 20
     clip-to-geometry true
 }
 
 binds {
     Mod+Return { spawn "kitty"; }
-    Mod+Shift+Return { spawn "ags" "toggle" "applauncher"; }
-    Mod+Shift+Q { spawn "ags" "toggle" "powermenu"; }
+    Mod+Shift+Return { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+Shift+Q { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
     Mod+Shift+W { spawn "zen-browser"; }
     Mod+Shift+S { spawn "spotify-launcher"; }
     Mod+Shift+C { spawn "kitty" "nvim" ; }
@@ -295,7 +268,8 @@ binds {
     Mod+Shift+G { spawn "steam"; }
     Mod+Shift+D { spawn "vesktop"; }
     Mod+Shift+F { spawn "nautilus"; }
-    Mod+Shift+P { spawn "hyprlock"; }
+    Mod+Shift+P { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+Shift+M { spawn "kitty" "rmpc"; }
 
     Mod+Shift+Left { spawn "playerctl" "previous"; }
     Mod+Shift+Up { spawn "playerctl" "play-pause"; }
@@ -504,4 +478,8 @@ binds {
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
+}
+
+debug {
+   honor-xdg-activation-with-invalid-serial
 }

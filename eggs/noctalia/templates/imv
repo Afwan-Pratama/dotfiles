@@ -1,0 +1,4 @@
+[options]
+background={{colors.background.default.hex_stripped}}
+overlay_text_color={{colors.on_background.default.hex_stripped}}
+overlay_background_color={{colors.surface_container.default.hex_stripped}}

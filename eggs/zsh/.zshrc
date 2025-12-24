@@ -58,4 +58,4 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 # bun completions
 [ -s "/home/xenom/.bun/_bun" ] && source "/home/xenom/.bun/_bun"
 
-swiftfetch
+albafetch

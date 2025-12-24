@@ -1,0 +1,72 @@
+body.custom {
+  --text-default: {{colors.on_surface.default.hex}};
+  --text-secondary: {{colors.on_surface_variant.default.hex}};
+  --text-tertiary: {{colors.surface_container_lowest.default.hex}};
+
+  --background: {{colors.surface_container.default.hex}};
+  --background-darker: {{colors.surface_container_low.default.hex}};
+  --background-lighter: {{colors.surface_container_high.default.hex}};
+  --body-background: {{colors.surface_container.default.hex}};
+  --gradient-body-background: {{colors.surface_container.default.hex}};
+  --input-background: {{colors.surface_container_high.default.hex}};
+  --controller-hints-background: transparent;
+  --current-background: {{colors.surface_container.default.hex}};
+  --modal-background: {{colors.surface_container_lowest.default.hex}};
+  --modal-border: {{colors.primary.default.hex}};
+  --osk-background: {{colors.surface_container.default.hex}};
+  --osk-button-background: {{colors.surface_container_high.default.hex}};
+  --osk-button-border: {{colors.surface_container_lowest.default.hex}};
+  --search-bar-background: {{colors.surface_container_high.default.hex}};
+  --search-bar-border: {{colors.surface_container_high.default.hex}};
+
+  --action-icon: {{colors.on_surface.default.hex}};
+  --action-icon-hover: {{colors.surface_container_highest.default.hex}};
+  --action-icon-active: {{colors.primary.default.hex}};
+  --icons-background: {{colors.surface_container.default.hex}};
+
+  --brand-primary: {{colors.primary.default.hex}};
+  --brand-primary-hover: {{colors.surface_container_highest.default.hex}};
+
+  --primary-button: {{colors.primary.default.hex}};
+  --primary-button-overlay: {{colors.primary.default.hex}};
+  --secondary-button: {{colors.primary.default.hex}};
+  --secondary-button-overlay: {{colors.primary.default.hex}};
+  --tertiary-button: {{colors.primary.default.hex}};
+  --tertiary-button-overlay: {{colors.primary.default.hex}};
+  --success-button: {{colors.tertiary.default.hex}};
+  --disabled-button: {{colors.surface_container_low.default.hex}};
+  --disabled-button-overlay: {{colors.surface_container_lowest.default.hex}};
+
+  --navbar-active: {{colors.primary.default.hex}};
+  --navbar-inactive: {{colors.on_surface.default.hex}};
+  --navbar-active-background: {{colors.surface_container_high.default.hex}};
+  --navbar-accent: {{colors.primary.default.hex}};
+  --navbar-background: {{colors.surface_container_low.default.hex}};
+  --divider: {{colors.surface_container_low.default.hex}};
+
+  --success: {{colors.tertiary.default.hex}};
+  --success-hover: {{colors.surface_container_highest.default.hex}};
+  --danger: {{colors.secondary.default.hex}};
+  --danger-hover: {{colors.surface_container_highest.default.hex}};
+
+  --primary: {{colors.primary.default.hex}};
+  --secondary: {{colors.primary.default.hex}};
+  --accent: {{colors.primary.default.hex}};
+
+  --status-success: {{colors.tertiary.default.hex}};
+  --status-warning: {{colors.secondary.default.hex}};
+  --status-danger: {{colors.error.default.hex}};
+  --status-info: {{colors.primary.default.hex}};
+
+  --neutral-01: {{colors.surface_container_lowest.default.hex}};
+  --neutral-02: {{colors.surface_container.default.hex}};
+  --neutral-03: {{colors.surface_container_high.default.hex}};
+  --neutral-04: {{colors.surface_container_highest.default.hex}};
+  --neutral-05: {{colors.outline.default.hex}};
+  --neutral-06: {{colors.on_surface.default.hex}};
+}
+
+body.catppuccin-mocha-blue select,
+body.catppuccin-mocha-blue input {
+  box-shadow: none !important;
+}

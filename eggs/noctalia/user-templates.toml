@@ -1,0 +1,55 @@
+[config]
+
+# User-defined templates
+# Add your custom templates below
+# Example:
+# [templates.myapp]
+# input_path = "~/.config/noctalia/templates/myapp.css"
+# output_path = "~/.config/myapp/theme.css"
+# post_hook = "myapp --reload-theme"
+
+[templates.starship]
+input_path = "~/.config/noctalia/templates/starship.toml"
+output_path = "~/.config/starship.toml"
+
+[templates.spotify]
+input_path = "~/.config/noctalia/templates/spotify.ini"
+output_path = "~/.config/spicetify/Themes/text/color.ini"
+post_hook = "~/.config/noctalia/post-hooks-script/spotify"
+
+[templates.btop]
+input_path = "~/.config/noctalia/templates/btop.theme"
+output_path = "~/.config/btop/themes/custom.theme"
+
+[templates.zathura]
+input_path = "~/.config/noctalia/templates/zathura"
+output_path = "~/.config/zathura/zathurarc"
+
+[templates.niri]
+input_path = "~/.config/noctalia/templates/niri.kdl"
+output_path = "~/.config/niri/color.kdl"
+
+[templates.zenChrome]
+input_path = "~/.config/noctalia/templates/zenChrome.css"
+output_path = "~/.zen/b961n8ib.Default (release)/chrome/userChrome.css"
+post_hook = "pkill -USR1 zen"
+
+[templates.zenContent]
+input_path = "~/.config/noctalia/templates/zenContent.css"
+output_path = "~/.zen/b961n8ib.Default (release)/chrome/userContent.css"
+
+[templates.zenLogo]
+input_path = "~/.config/noctalia/templates/zenLogo.svg"
+output_path = "~/.zen/b961n8ib.Default (release)/chrome/zen-logo.svg"
+
+[templates.mpv]
+input_path = "~/.config/noctalia/templates/mpv.conf"
+output_path = "~/.config/mpv/mpv.conf"
+
+[templates.imv]
+input_path = "~/.config/noctalia/templates/imv"
+output_path = "~/.config/imv/config"
+
+[templates.heroic]
+input_path = "~/.config/noctalia/templates/heroic.css"
+output_path = "~/Games/Heroic/Themes/custom.css"

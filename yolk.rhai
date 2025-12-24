@@ -64,7 +64,7 @@ const themesAlpha = #{
 export let data = #{
 	colors : themes.kanagawa,
 	colorsAlt : themesAlt.kanagawa,
-	icon : #{ 
+	icon : #{
 		name : "Colloid",
 	},
 	cursor : #{
@@ -79,16 +79,7 @@ export let data = #{
 };
 
 export let eggs = #{
-	hypr: #{ 
-		targets: "~/.config/hypr", 
-		enabled: true, 
-		templates: ["hyprlock.conf"] 
-	},
-	kitty: #{ 
-		targets: "~/.config/kitty", 
-		enabled: true, 
-		templates: ["kitty.conf"] 
-	},
+	kitty: "~/.config/kitty",
 	gtk3: #{
 		targets: "~/.config/gtk-3.0",
 		enabled: true,
@@ -99,60 +90,26 @@ export let eggs = #{
 		enabled: true,
 		templates: ["settings.ini", "gtk.css"]
 	},
-	qt5ct: "~/.config/qt5ct",
-	nvim: #{
-        	targets: "~/.config/nvim",
-    	},
+	nvim: "~/.config/nvim",
 	zsh: "~/.config/zsh",
-	ags: #{ 
-		targets: "~/.config/ags",
-		enabled: true,
-		templates: ["**/*.scss"]
-	},
-	starship: #{
-		targets: #{
-			"starship.toml" : "~/.config/starship.toml"
-		},
-		enabled: true,
-		templates: ["starship.toml"]
-	},
 	ghostty: #{
 		targets: "~/.config/ghostty",
 		enabled: true,
 		templates: ["*"],
 	},
-	zenbrowser: #{
-		targets: "~/.zen/b961n8ib.Default (release)/chrome",
-		enabled: true,
-		templates: ["userChrome.css","userContent.css"]
-	},
+	zenbrowser: "~/.zen/b961n8ib.Default (release)/chrome",
 	niri: #{
 		targets: "~/.config/niri",
 		enabled: true,
 		templates: ["config.kdl"]
 	},
-	btop: #{
-		targets: "~/.config/btop",
-		enabled: true,
-		templates: ["themes/custom.theme"]
-	},
+	btop: "~/.config/btop",
 	yazi: #{
 		targets: "~/.config/yazi",
 		enabled: true,
 		templates: ["theme.toml", "custom.tmTheme"]
 	},
-	spicetify: #{
-		targets: "~/.config/spicetify",
-		enabled: true,
-		templates: ["Themes/text/user.css", "Themes/text/color.ini"]
-	},
-	vesktop: #{
-		targets: #{
-			"custom.theme.css" : "~/.config/vesktop/themes/custom.theme.css"
-		},
-		enabled: true,
-		templates : ["custom.theme.css"]
-	},
+	spicetify: "~/.config/spicetify",
 	heroic: #{
 		targets: "~/Games/Heroic/Themes",
 		enabled: true,
@@ -174,20 +131,13 @@ export let eggs = #{
 		templates: ["mpv.conf"]
 	},
 	zed: "~/.config/zed",
-	swiftfetch: #{
-		targets: "~/.config/swiftfetch",
-		enabled: true,
-		templates: ["config.toml"]
-	},
-	zathura: #{
-		targets: "~/.config/zathura",
-		enabled: true,
-		templates: ["zathurarc"]
-	},
+  zathura: "~/.config/zathura",
 	MangoHud: #{
 		targets: "~/.config/MangoHud",
 		enabled: true,
 		templates: ["MangoHud.conf"]
 	},
-
+	noctalia: "~/.config/noctalia",
+	quickshell: "~/.config/quickshell",
+  albafetch: "~/.config/albafetch",
 };

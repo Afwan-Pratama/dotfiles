@@ -1,124 +1,89 @@
+# Matugen template for btop
+
+
+# Colors should be in 6 or 2 character hexadecimal or single spaced rgb decimal: "#RRGGBB", "#BW" or "0-255 0-255 0-255"
+# example for white: "#ffffff", "#ff" or "255 255 255".
+
+# All graphs and meters can be gradients
+# For single color graphs leave "mid" and "end" variable empty.
+# Use "start" and "end" variables for two color gradient
+# Use "start", "mid" and "end" for three color gradient
+
 # Main background, empty for terminal default, need to be empty if you want transparent background
-theme[main_bg]=
+theme[main_bg]=""
 
 # Main text color
-# {#replace_color(data.colors.base05)#}
-theme[main_fg]="#dcd7ba"
+theme[main_fg]="#c8c093"
 
 # Title color for boxes
-# {#replace_color(data.colors.base05)#}
-theme[title]="#dcd7ba"
+theme[title]="#76946a"
 
 # Highlight color for keyboard shortcuts
-# {#replace_color(data.colors.base0D)#}
-theme[hi_fg]="#7e9cd8"
+theme[hi_fg]="#c0a36e"
 
 # Background color of selected item in processes box
-# {#replace_color(data.colors.base01)#}
-theme[selected_bg]="#16161d"
+theme[selected_bg]="#76946a"
 
 # Foreground color of selected item in processes box
-# {#replace_color(data.colors.base0C)#}
-theme[selected_fg]="#6a9589"
+theme[selected_fg]="#1f1f28"
 
 # Color of inactive/disabled text
-# {#replace_color(data.colors.base03)#}
-theme[inactive_fg]="#54546d"
-
-# Color of text appearing on top of graphs, i.e uptime and current network graph scaling
-# {#replace_color(data.colors.base04)#}
-theme[graph_text]="#727169"
-
-# Background color of the percentage meters
-# {#replace_color(data.colors.base01)#}
-theme[meter_bg]="#16161d"
+theme[inactive_fg]="#717c7c"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
-# {#replace_color(data.colors.base04)#}
-theme[proc_misc]="#727169"
+theme[proc_misc]="#7e9cd8"
 
-# CPU, Memory, Network, Proc box outline colors
-# {#replace_color(data.colors.base0E)#}
-theme[cpu_box]="#957fb8" #Mauve
-# {#replace_color(data.colors.base0B)#}
-theme[mem_box]="#76946a" #Green
-# {#replace_color(data.colors.base0F)#}
-theme[net_box]="#d27e99" #Maroon
-# {#replace_color(data.colors.base0C)#}
-theme[proc_box]="#6a9589" #Blue
+# Cpu box outline color
+theme[cpu_box]="#63635f"
+
+# Memory/disks box outline color
+theme[mem_box]="#63635f"
+
+# Net up/down box outline color
+theme[net_box]="#63635f"
+
+# Processes box outline color
+theme[proc_box]="#63635f"
 
 # Box divider line and small boxes line color
-# {#replace_color(data.colors.base02)#}
-theme[div_line]="#223249"
+theme[div_line]="#2f2f2d"
 
-# Temperature graph color (Green -> Yellow -> Red)
-# {#replace_color(data.colors.base0B)#}
-theme[temp_start]="#76946a"
-# {#replace_color(data.colors.base0A)#}
-theme[temp_mid]="#c0a36e"
-# {#replace_color(data.colors.base08)#}
+# Temperature graph colors
+theme[temp_start]="#c0a36e"
+theme[temp_mid]="#76946a"
 theme[temp_end]="#c34043"
 
-# CPU graph colors (Teal -> Lavender)
-# {#replace_color(data.colors.base0C)#}
-theme[cpu_start]="#6a9589"
-# {#replace_color(data.colors.base0D)#}
-theme[cpu_mid]="#7e9cd8"
-# {#replace_color(data.colors.base0E)#}
-theme[cpu_end]="#957fb8"
+# CPU graph colors
+theme[cpu_start]="#c0a36e"
+theme[cpu_mid]="#76946a"
+theme[cpu_end]="#c34043"
 
-# Mem/Disk free meter (Mauve -> Lavender -> Blue)
-# {#replace_color(data.colors.base0E)#}
-theme[free_start]="#957fb8"
-# {#replace_color(data.colors.base0D)#}
-theme[free_mid]="#7e9cd8"
-# {#replace_color(data.colors.base0C)#}
-theme[free_end]="#6a9589"
+# Mem/Disk free meter
+theme[free_start]="#c0a36e"
+theme[free_mid]=""
+theme[free_end]="#725827"
 
-# Mem/Disk cached meter (Sapphire -> Lavender)
-# {#replace_color(data.colors.base0C)#}
-theme[cached_start]="#6a9589"
-# {#replace_color(data.colors.base0D)#}
-theme[cached_mid]="#7e9cd8"
-# {#replace_color(data.colors.base0E)#}
-theme[cached_end]="#957fb8"
+# Mem/Disk cached meter
+theme[cached_start]="#7e9cd8"
+theme[cached_mid]=""
+theme[cached_end]="#1c3c7d"
 
-# Mem/Disk available meter (Peach -> Red)
-# {#replace_color(data.colors.base09)#}
-theme[available_start]="#ffa066"
-# {#replace_color(data.colors.base0F)#}
-theme[available_mid]="#d27e99"
-# {#replace_color(data.colors.base08)#}
-theme[available_end]="#c34043"
+# Mem/Disk available meter
+theme[available_start]="#76946a"
+theme[available_mid]=""
+theme[available_end]="#436038"
 
-# Mem/Disk used meter (Green -> Sky)
-# {#replace_color(data.colors.base0B)#}
-theme[used_start]="#76946a"
-# {#replace_color(data.colors.base0C)#}
-theme[used_mid]="#6a9589"
-# {#replace_color(data.colors.base0D)#}
-theme[used_end]="#7e9cd8"
+# Mem/Disk used meter
+theme[used_start]="#c34043"
+theme[used_mid]=""
+theme[used_end]="#7c1d1f"
 
-# Download graph colors (Peach -> Red)
-# {#replace_color(data.colors.base09)#}
-theme[download_start]="#ffa066"
-# {#replace_color(data.colors.base0F)#}
-theme[download_mid]="#d27e99"
-# {#replace_color(data.colors.base08)#}
-theme[download_end]="#c34043"
+# Download graph colors
+theme[download_start]="#c0a36e"
+theme[download_mid]="#76946a"
+theme[download_end]="#7e9cd8"
 
-# Upload graph colors (Green -> Sky)
-# {#replace_color(data.colors.base0B)#}
-theme[upload_start]="#76946a"
-# {#replace_color(data.colors.base0C)#}
-theme[upload_mid]="#6a9589"
-# {#replace_color(data.colors.base0D)#}
+# Upload graph colors
+theme[upload_start]="#c0a36e"
+theme[upload_mid]="#76946a"
 theme[upload_end]="#7e9cd8"
-
-# Process box color gradient for threads, mem and cpu usage (Sapphire -> Mauve)
-# {#replace_color(data.colors.base0C)#}
-theme[process_start]="#6a9589"
-# {#replace_color(data.colors.base0D)#}
-theme[process_mid]="#7e9cd8"
-# {#replace_color(data.colors.base0E)#}
-theme[process_end]="#957fb8"

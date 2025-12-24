@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+if ! pgrep spotify; then
+spicetify apply --no-restart
+else 
+spicetify apply
+fi

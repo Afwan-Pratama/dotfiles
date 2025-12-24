@@ -1,0 +1,17 @@
+layout {
+	focus-ring {
+		inactive-color "{{colors.surface.default.hex}}"
+
+		active-gradient from="{{colors.primary.default.hex}}" to="{{colors.secondary.default.hex}}" angle=45
+
+	}
+
+  shadow {
+        on
+        softness 30
+        spread 5
+        offset x=0 y=5
+        draw-behind-window true
+        color "{{colors.surface.default.hex}}"
+  }
+}

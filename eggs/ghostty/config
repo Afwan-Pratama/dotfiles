@@ -2,51 +2,7 @@
 font-family = "FiraCode Nerd Font Mono"
 font-size = 10.0
 
-background-opacity = 0.9
-
-# {#replace_color(data.colors.base00)#}
-palette = 0=#1f1f28
-# {#replace_color(data.colors.base08)#}
-palette = 1=#c34043
-# {#replace_color(data.colors.base0B)#}
-palette = 2=#76946a
-# {#replace_color(data.colors.base0A)#}
-palette = 3=#c0a36e
-# {#replace_color(data.colors.base0D)#}
-palette = 4=#7e9cd8
-# {#replace_color(data.colors.base0E)#}
-palette = 5=#957fb8
-# {#replace_color(data.colors.base0C)#}
-palette = 6=#6a9589
-# {#replace_color(data.colors.base05)#}
-palette = 7=#dcd7ba
-# {#replace_color(data.colors.base03)#}
-palette = 8=#54546d
-# {#replace_color(data.colors.base08)#}
-palette = 9=#c34043
-# {#replace_color(data.colors.base0B)#}
-palette = 10=#76946a
-# {#replace_color(data.colors.base0A)#}
-palette = 11=#c0a36e
-# {#replace_color(data.colors.base0D)#}
-palette = 12=#7e9cd8
-# {#replace_color(data.colors.base0E)#}
-palette = 13=#957fb8
-# {#replace_color(data.colors.base0C)#}
-palette = 14=#6a9589
-# {#replace_color(data.colors.base07)#}
-palette = 15=#717c7c
-# {#replace_color(data.colors.base00)#}
-background = #1f1f28
-# {#replace_color(data.colors.base05)#}
-foreground = #dcd7ba
-# {#replace_color(data.colors.base05)#}
-cursor-color = #dcd7ba
-# {#replace_color(data.colors.base00)#}
-cursor-text = #1f1f28 
-# {#replace_color(data.colors.base02)#}
-selection-background = #223249
-# {#replace_color(data.colors.base05)#}
-selection-foreground = #dcd7ba
+background-opacity = 1.0
 
 confirm-close-surface = false
+theme = noctalia
